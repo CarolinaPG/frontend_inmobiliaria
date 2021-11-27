@@ -81,3 +81,4 @@ Ahora para crear la plantilla maestra:
 
 > ng generate component plantilla/inicio
 
+> ng generate component plantilla/error
