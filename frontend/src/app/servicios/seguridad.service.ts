@@ -14,7 +14,9 @@ export class SeguridadService {
 
   datosUsuarioEnSesion = new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar());
 
-  constructor(private http: HttpClient) { 
+  constructor(
+    private http: HttpClient
+  ) { 
     this.VerificarSesionActual();
   }
 

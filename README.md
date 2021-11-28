@@ -87,3 +87,7 @@ Ahora para crear la plantilla maestra:
 > ng generate component plantilla/error
 
 > ng g c modulos/seguridad/cerrar-sesion
+
+> ng g s servicios/seguridad
+
+> ng g s servicios/registro
