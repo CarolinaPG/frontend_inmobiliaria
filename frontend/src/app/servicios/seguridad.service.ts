@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { ModeloIdentificar } from '../modelos/identificar.modelo';
+import { ModeloRecuperar } from '../modelos/recuperar.modelo';
 
 @Injectable({
   providedIn: 'root'
@@ -71,4 +72,16 @@ export class SeguridadService {
     let datosString = localStorage.getItem("datosSesion");
     return datosString;
   }
+
+  RecuperarClave(usuario: string): Observable<ModeloRecuperar>{
+    let res = this.http.patch<ModeloRecuperar>(`${this.url}/recuperarClave`, {
+      usuario: usuario,
+      clave: ""
+    }, {
+      headers: new HttpHeaders({ })
+    });
+    console.log(res);
+    return res;
+  }
+
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-//const cryptoJS = require("@types/crypto-js");
 import * as crypto from "crypto-js";
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
