@@ -1,30 +1,38 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-//import { QuestionBase } from './question-base';
-//import { QuestionControlService } from './question-control.service';
 
 @Component({
   selector: 'app-crear-cliente',
   templateUrl: './crear-cliente.component.html',
   styleUrls: ['./crear-cliente.component.css'],
-//  providers: [ QuestionControlService ]
 })
 export class CrearClienteComponent implements OnInit {
+  fgValidador: FormGroup = this.fb.group({
+    'nombres': ['', [Validators.required]],
+    'apellidos': ['', [Validators.required]],
+    'celular': ['', [Validators.required]],
+    'id': ['', [Validators.required]],
+    'email': ['', [Validators.required, Validators.email]],
+  });
 
-  //@Input() questions: QuestionBase<string>[] | null = [];
-  //form!: FormGroup;
-  //payLoad = '';
-
-  constructor() { }
-  //constructor(private qcs: QuestionControlService) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     //this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
   }
 
-  onSubmit() {
-    //this.payLoad = JSON.stringify(this.form.getRawValue());
+  RegistrarCliente(){
+    let nombres = this.fgValidador.controls['nombres'].value;
+    let apellidos = this.fgValidador.controls['apellidos'].value;
+    let celular = this.fgValidador.controls['celular'].value;
+    let id = this.fgValidador.controls['id'].value;
+    let email = this.fgValidador.controls['email'].value;
+    alert(nombres);
+    alert(apellidos);
+    alert(celular);
+    alert(id);
+    alert(email);
   }
 
 }

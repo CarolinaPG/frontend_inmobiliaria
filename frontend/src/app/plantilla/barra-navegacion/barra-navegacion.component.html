@@ -3,18 +3,22 @@
       <a routerLink="inicio" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/adminsitracion/clientes/crear-cliente">Personas</a></li>
-        <li><a routerLink="/adminsitracion/inmuebles">Inmuebles</a></li>
-        <li><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
-        <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Personas</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/inmuebles">Inmuebles</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
+        <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
+        <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a routerLink="/adminsitracion/personas">Personas</a></li>
-    <li><a routerLink="/adminsitracion/inmuebles">Inmuebles</a></li>
-    <li><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
-    <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Personas</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/inmuebles">Inmuebles</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
+    <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
+    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
 </ul>
         

@@ -13,6 +13,9 @@ Comandos de los paquetes que se requisiró instalar
 
 > npm install materialize-css@next
 
+> npm install crypto-js
+
+> npm install --save @types/crypto-js
 
 
 ### Comandos para crear el frontend
@@ -82,3 +85,5 @@ Ahora para crear la plantilla maestra:
 > ng generate component plantilla/inicio
 
 > ng generate component plantilla/error
+
+> ng g c modulos/seguridad/cerrar-sesion

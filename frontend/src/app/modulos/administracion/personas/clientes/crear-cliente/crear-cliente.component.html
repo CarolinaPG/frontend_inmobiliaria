@@ -1,144 +1,55 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <!--
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    -->
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- REVISAR SCRIPT PARA EL RE-CAPTCHA
-    <script>
-      const onloadCallback = function() {
-        console.log("reCAPTCHA has loaded!");
-        grecaptcha.reset();
-      };
-    </script>
-    <script async src='https://www.google.com/recaptcha/api.js?hl=es'></script>
-    <script>
-      // If reCAPTCHA is still loading, grecaptcha will be undefined.
-      grecaptcha.ready(function(){
-        grecaptcha.render("container", {
-          sitekey: "ABC-123"
-        });
-      });
-    </script>
-    -->
-  </head>
-  <body>
-    <!--PRIMERA PARTE: Donde están las opciones de link, home, dropdown ...-->
-    <div class="container">
-        <!--CONTENIDO: Donde están los campos para el registro ...-->
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-6">
-              <label for="txtNombres" class="form-label">Nombres</label>
-              <input type="text" class="form-control" id="txtNombres" value="" required>
-              <div class="valid-feedback">
-                Los nombres son obligatorios
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="txtApellidos" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="txtApellidos" value="" required>
-              <div class="valid-feedback">
-                Los apellidos son obligatorios
-              </div>
-            </div>
-
-            <div class="col-md-2">
-                <label for="txtIndicativo" class="form-label">Indicativo</label>
-                <select class="form-select" id="txtIndicativo" value="" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>(+57)</option>
-                </select>
-                <div class="invalid-feedback">
-                  Seleccione un indicativo para el país
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <label for="txtCelular" class="form-label">Celular</label>
-                <input type="text" class="form-control" id="txtCelular" value="" required>
-                <div class="invalid-feedback">
-                    Ingrese un número de celular
-                </div>
-            </div>
-  
-            <div class="col-md-2">
-                <label for="txtTipoId" class="form-label">Tipo</label>
-                <select class="form-select" id="txtTipoId" value="" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>Cédula</option>
-                  <option>Pasaporte</option>
-                </select>
-                <div class="invalid-feedback">
-                  Seleccione un tipo de documento de identidad válido
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <label for="txtId" class="form-label">Documento</label>
-                <input type="text" class="form-control" id="txtId" value="" required>
-                <div class="invalid-feedback">
-                    El número de documento es obligatorio
-                </div>
-            </div>
-            
-            <div class="col-md-12">
-              <label for="txtEmail" class="form-label">Email</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="txtEmail" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  El correo electrónico es obligatorio
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                  Yo no soy un robot
-                </label>
-                <div class="invalid-feedback">
-                  Debes indicar que no ere un robot
-                </div>
-              </div>
-            </div>
-            
-            <!--
-            <span class="msg-error error"></span>
-            <div class="col-12">
-                <div id="recaptcha" class="g-recaptcha" data-sitekey="ABC-123"></div>
-            </div>
-            -->
-
-            <div class="col-12">
-              <button class="btn btn-primary" type="submit">Registrar Cliente</button>
-            </div>
-        </form>
-
+<div class="container section">
+<h3 class="center-align" >Registrar Cliente</h3>
+<div class="row">
+  <form  [formGroup]="fgValidador" class="col s12" (ngSubmit)="RegistrarCliente()">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="nombres" id="txtNombres" type="text" class="validate">
+        <label for="txtNombres">Nombres</label>
+      </div>
+      <div class="input-field col s6">
+        <!--i class="material-icons prefix">account_circle</i-->
+        <input formControlName="apellidos" id="txtApellidos" type="text" class="validate">
+        <label for="txtApellidos">Apellidos</label>
+      </div>
     </div>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-    <!-- 
-    <script type="text/javascript" src="recursos/funciones.js"></script>
-    -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    -->
-    <script src="recursos/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">payment</i>
+        <input formControlName="id" id="txtId" type="tel" class="validate">
+        <label for="txtId">No. de Documento</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input formControlName="celular" id="txtCelular" type="tel" class="validate">
+        <label for="txtCelular">Celular</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input formControlName="email" id="txtEmail" type="email" class="validate">
+        <label for="txtEmail">Email</label>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label class="required">
+          <input type="checkbox" />
+          <span>Yo no soy un robot</span>
+        </label>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="input-field col s6 center-align" >
+        <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">REGISTRAR
+          <i class="material-icons right">send</i>
+        </button>
+      </div>      
+    </div>
+</form>
+</div>
+        
+</div>
