@@ -44,7 +44,7 @@ export class IdentificacionComponent implements OnInit {
         //alert("Datos correctos")
       }, (error: any) =>{
         // KO
-        alert("Datos inválidos")
+        alert("Correo no registrado o no verificado. De lo contrario, revise su usuario y contraseña de nuevo")
       });
   }
 
