@@ -1,0 +1,117 @@
+      <!-- Tables -->
+      <div class="row">
+        <div class="col s12">
+            <h2 class="section-title">Lista de solicitudes del sistema</h2>
+  
+            <div class="card">
+                <div id="table-custom-elements_wrapper" class="dataTables_wrapper no-footer">
+                    <div id="table-custom-elements_filter" class="dataTables_filter">
+                        <label><input type="search" class="" placeholder="Enter search term" aria-controls="table-custom-elements"></label>
+                    </div>
+                    <div class="dataTables_scroll">
+                        <div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px none; width: 100%;">
+                            <div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1248px; padding-right: 12px;">
+                                <table class="row-border dataTable no-footer" role="grid" style="margin-left: 0px; width: 1248px;" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=""><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px;" aria-label="Código: activate to sort column ascending">ID Solicitud</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Dirección: activate to sort column ascending">ID Cliente</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Valor: activate to sort column ascending">Código</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Dirección</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Tipo</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Valor</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Fechas</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Estado</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Fotografía</th>
+                                        </tr>
+                                        </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 400px; width: 100%;">
+                            <table id="table-custom-elements" class="row-border dataTable no-footer" role="grid" aria-describedby="table-custom-elements_info" style="width: 100%;" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr role="row" style="height: 0px;">
+                                        <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="">
+                                            <div class="dataTables_sizing" style="height:0;overflow:hidden;"><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">ID Solicitud</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">ID CLiente</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Código</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Dirección</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Tipo</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Valor</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Fechas</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Estado</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Fotografía</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
+                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
+                                        <td>{{i.id}}</td>
+                                    <!--    
+                                        <td>{{i.id_cliente}}</td>
+                                        <td>{{i.id_inmueble}}</td>
+                                        <td>{{i.inmueble.direccion}}</td>
+                                        <td>${{i.inmueble.tipoIn}}</td>
+                                        <td>${{i.inmueble.Valor}}</td>
+                                        <td>${{i.fechas[0].fecha}}<br>{{i.fecha[1]? i.fecha[1].fecha: ""}}</td>
+                                        <td>${{i.id_estado}}</td>
+                                        <td>${{i.inmueble.fotografia}}</td>
+                                    -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="footer-wrapper">
+                        <div class="dataTables_length" id="table-custom-elements_length">
+                            <label>Show 
+                                <div class="select-wrapper">
+                                    <input class="select-dropdown dropdown-trigger" type="text" readonly="true" data-target="select-options-995eb258-2b84-2116-284b-084e43dc870b">
+                                    <ul id="select-options-995eb258-2b84-2116-284b-084e43dc870b" class="dropdown-content select-dropdown" tabindex="0">
+                                        <li id="select-options-995eb258-2b84-2116-284b-084e43dc870b0" tabindex="0" class="selected">
+                                            <span>10</span>
+                                        </li>
+                                        <li id="select-options-995eb258-2b84-2116-284b-084e43dc870b1" tabindex="0">
+                                            <span>25</span>
+                                        </li>
+                                        <li id="select-options-995eb258-2b84-2116-284b-084e43dc870b2" tabindex="0">
+                                            <span>50</span>
+                                        </li>
+                                        <li id="select-options-995eb258-2b84-2116-284b-084e43dc870b3" tabindex="0">
+                                            <span>100</span>
+                                        </li>
+                                    </ul>
+                                    <svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 10l5 5 5-5z"></path>
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                    </svg>
+                                    <select name="table-custom-elements_length" aria-controls="table-custom-elements" class="" tabindex="-1">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div> 
+                                entries</label>
+                            </div>
+                            <div class="paging-info">
+                                <div class="dataTables_info" id="table-custom-elements_info" role="status" aria-live="polite">Showing 1 to 10 of 14 entries</div>
+                                <div class="dataTables_paginate paging_full" id="table-custom-elements_paginate">
+                                    <a class="paginate_button first disabled waves-effect" aria-controls="table-custom-elements" data-dt-idx="0" tabindex="0" id="table-custom-elements_first">First</a>
+                                    <a class="paginate_button previous disabled waves-effect" aria-controls="table-custom-elements" data-dt-idx="1" tabindex="0" id="table-custom-elements_previous">Previous</a>
+                                    <a class="paginate_button next waves-effect" aria-controls="table-custom-elements" data-dt-idx="2" tabindex="0" id="table-custom-elements_next">Next</a>
+                                    <a class="paginate_button last waves-effect" aria-controls="table-custom-elements" data-dt-idx="3" tabindex="0" id="table-custom-elements_last">Last</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<!-- END: Page Main-->
+
+      

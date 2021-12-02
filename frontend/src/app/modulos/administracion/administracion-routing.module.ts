@@ -70,6 +70,10 @@ const routes: Routes = [
   },
 
   {
+    path: "listar-inmuebles",
+    component: BuscarInmuebleComponent
+  },
+  {
     path: 'buscar-inmueble',
     component: BuscarInmuebleComponent
   },
@@ -78,11 +82,11 @@ const routes: Routes = [
     component: CrearInmuebleComponent
   },
   {
-    path: 'editar-inmueble',
+    path: 'editar-inmueble/:id',
     component: EditarInmuebleComponent
   },
   {
-    path: 'eliminar-inmueble',
+    path: 'eliminar-inmueble/:id',
     component: EliminarInmuebleComponent
   }
 ];

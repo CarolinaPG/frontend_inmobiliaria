@@ -1,8 +1,7 @@
-<!-- Tables -->
-<div class="">
+    <!-- Tables -->
     <div class="row">
         <div class="col s12">
-            <h1 class="section-title"><strong>Inmuebles</strong></h1>
+            <h2 class="section-title">Inmuebles</h2>
   
             <div class="card">
                 <div id="table-custom-elements_wrapper" class="dataTables_wrapper no-footer">
@@ -53,11 +52,11 @@
                                         <td>{{i.codigo}}</td>
                                         <td>{{i.direccion}}</td>
                                         <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad?.nombre}}</td>
-                                        <td><strong><h5>${{i.valor}}</h5></strong></td>
-                                        <td><span class="new badge blue" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
-                                            <span class="new badge green" data-badge-caption="">{{i.tipoO?.nombre}}</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">{{i.estado?.nombre}}</span></td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
                                         <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
                                         <td>{{i.videoYoutube}}</td>
                                     </tr>
@@ -66,11 +65,63 @@
                                         <td>{{i.codigo}}</td>
                                         <td>{{i.direccion}}</td>
                                         <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad?.nombre}}</td>
-                                        <td><strong><h5>${{i.valor}}</h5></strong></td>
-                                        <td><span class="new badge blue" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
-                                            <span class="new badge green" data-badge-caption="">{{i.tipoO?.nombre}}</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">{{i.estado?.nombre}}</span></td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
+                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                        <td>{{i.videoYoutube}}</td>
+                                    </tr>
+                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
+                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
+                                        <td>{{i.codigo}}</td>
+                                        <td>{{i.direccion}}</td>
+                                        <td>{{i.departamento}}</td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
+                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                        <td>{{i.videoYoutube}}</td>
+                                    </tr>
+                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
+                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
+                                        <td>{{i.codigo}}</td>
+                                        <td>{{i.direccion}}</td>
+                                        <td>{{i.departamento}}</td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
+                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                        <td>{{i.videoYoutube}}</td>
+                                    </tr>
+                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
+                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
+                                        <td>{{i.codigo}}</td>
+                                        <td>{{i.direccion}}</td>
+                                        <td>{{i.departamento}}</td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
+                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                        <td>{{i.videoYoutube}}</td>
+                                    </tr>
+                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
+                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
+                                        <td>{{i.codigo}}</td>
+                                        <td>{{i.direccion}}</td>
+                                        <td>{{i.departamento}}</td>
+                                        <td>{{i.ciudad}}</td>
+                                        <td>${{i.valor}}</td>
+                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
+                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
                                         <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
                                         <td>{{i.videoYoutube}}</td>
                                     </tr>
@@ -78,7 +129,6 @@
                             </table>
                         </div>
                     </div>
-
                     <div class="footer-wrapper">
                         <div class="dataTables_length" id="table-custom-elements_length">
                             <label>Show 
@@ -125,7 +175,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <!-- END: Page Main-->
 
@@ -133,15 +182,11 @@
 
 <div class="section" id="main">
     <div class="row s12" id="ecommerce-inmuebles">
-
         <!--Lado izquierdo donde se muestran los filtros de filtros-->
-        <!--
         <div class="col s3 hide-on-med-and-down animate fadeLeft">
             <div class="card">
                 <div class="card-content">
-        -->
                     <!--Categorias-->
-        <!-- 
                     <span class="card-title">Categories</span>
                     <hr class="p-0 mb-10">
                     <ul class="collapsible">
@@ -158,15 +203,12 @@
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                     </ul>
-        -->
                     <!--Time Picker-->
-        <!--
                     <span class="card-title">Time picker</span>
                     <hr class="p-0 mb-10">
                     <input type="text" class="datepicker">
-        -->            
+                    
                     <!--Prices-->
-        <!--
                     <span class="card-title mt-10">Price</span>
                     <hr class="p-0 mb-10">
                     <div id="test-slider"></div>
@@ -193,9 +235,8 @@
                         </div>
                     </div>
                     </div>
-        -->            
+                    
                     <!--Color-->
-        <!--
                     <span class="card-title mt-10">Color</span>
                     <hr class="p-0 mb-10">
                     <form action="#" class="display-grid">
@@ -217,9 +258,8 @@
                         <span><i class="material-icons vertical-align-bottom blue-text"> lens </i> Blue</span>
                     </label><br>
                     </form>
-        -->
+    
                     <!---->
-        <!--
                     <span class="card-title mt-10">Brand</span>
                     <hr class="p-0 mb-10">
                     <form action="#" class="display-grid">
@@ -232,9 +272,8 @@
                         <span>Samsung</span>
                     </label><br>
                     </form>
-        -->
+    
                     <!---->
-        <!--
                     <span class="card-title mt-10">Offers</span>
                     <hr class="p-0 mb-10">
                     <form action="#" class="display-grid">
@@ -258,18 +297,18 @@
                 </div>
             </div>
         </div>
-        -->
+        
         <!--Lado derecho donde se muestran los apartamentos-->
         <div class="col s9 pr-0">
             <!--Primer apartamento-->
             <div *ngFor="let i of listadoRegistros" class="col s12 m4 l4">
                 <div class="card animate fadeLeft">
                     <div class="card-content">
-                        <p>{{i.tipoIn?.nombre}} <br> {{i.tipoO?.nombre}}</p>
+                        <p>{{i.tipoIn}} - {{i.tipoOf}}</p>
                         <span class="card-title text-ellipsis">{{i.codigo}}</span>
-                        <img src="{{i.fotografia}}" class="responsive-img imagenInmueble1" alt="">
+                        <img src="{{i.fotografia}}" class="responsive-img" alt="">
                         <div class="display-flex flex-wrap justify-content-center">
-                            <h2 class="mt-3">${{i.valor}}</h2>
+                            <h5 class="mt-3">${{i.valor}}</h5>
                             <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal1">View</a>
                             </div>
                     </div>
@@ -285,43 +324,7 @@
                                 <img src="{{i.fotografia}}" class="responsive-img" alt="">
                             </div>
                             <div class="col m6 s12">
-                                <p>{{i.tipoIn}} - {{i.tipoO}}</p>
-                                <h5>{{i.codigo}}</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="green-text">{{i.estado}}</span></p>
-                                <hr class="mb-5">
-                                <h5>$399.00 <span class="prise-text-style ml-2">$459.00</span></h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">SOLICITAR</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">CONTACTAR CON EL ASESOR</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div *ngFor="let i of listadoRegistros" class="col s12 m4 l4">
-                <div class="card animate fadeLeft">
-                    <div class="card-content">
-                        <p>{{i.tipoIn?.nombre}} <br> {{i.tipoO?.nombre}}</p>
-                        <span class="card-title text-ellipsis">{{i.codigo}}</span>
-                        <img src="{{i.fotografia}}" class="responsive-img imagenInmueble1" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h2 class="mt-3">${{i.valor}}</h2>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal1">View</a>
-                            </div>
-                    </div>
-                </div>
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal" tabindex="0">
-                    <div class="modal-content pt-2">
-                        <div class="row" id="product-one">
-                            <div class="col s12">
-                                <a class="modal-close right"><i class="material-icons">close</i></a>
-                            </div>
-                            <div class="col m6 s12">
-                                <img src="{{i.fotografia}}" class="responsive-img" alt="">
-                            </div>
-                            <div class="col m6 s12">
-                                <p>{{i.tipoIn}} - {{i.tipoO}}</p>
+                                <p>{{i.tipoIn}} - {{i.tipoOf}}</p>
                                 <h5>{{i.codigo}}</h5>
                                 <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
                                 <p>Availability: <span class="green-text">{{i.estado}}</span></p>
@@ -335,8 +338,94 @@
                 </div>
             </div>
 
+            <!--Segundo apartamento-->
+            <div class="col s12 m4 l4">
+                <div class="card animate fadeUp">
+                    <div class="card-content">
+                        <p>Headphone</p>
+                        <span class="card-title text-ellipsis">Purple Solo 2 Wireless</span>
+                        <img src="https://i.ibb.co/6ZpqfX1/apa-002.jpg" class="responsive-img" alt="">
+                        <div class="display-flex flex-wrap justify-content-center">
+                            <h5 class="mt-3">$249.00</h5>
+                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal2">View</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal" tabindex="0">
+                    <div class="modal-content">
+                        <a class="modal-close right"><i class="material-icons">close</i></a>
+                        <div class="row" id="product-two">
+                            <div class="col m6 s12">
+                                <img src="eCommerce%20Products%20Page%20|%20Materialize%20-%20Material%20Design%20Admin%20Template_files/headphone.png" class="responsive-img" alt="">
+                            </div>
+                            <div class="col m6 s12">
+                                <p>Headphone</p>
+                                <h5>Purple Solo 2 Wireless</h5>
+                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
+                                <p>Availability: <span class="red-text">Out of stock</span></p>
+                                <hr class="mb-5">
+                                <span class="vertical-align-top mr-4"><i class="material-icons mr-3">favorite_border</i>Wishlist</span>
+                                <ul class="list-bullet">
+                                    <li class="list-item-bullet">Fine-tuned acoustics for clarity</li>
+                                    <li class="list-item-bullet">Streamlined design for a custom-fit</li>
+                                    <li class="list-item-bullet">Durable and foldable so you can take them on-the-go</li>
+                                    <li class="list-item-bullet">ake calls and control music with RemoteTalk cable</li>
+                                </ul>
+                                <h5>$249.00 <span class="prise-text-style ml-2">$559.00</span></h5>
+                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">ADD TO CART</a>
+                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">BUY NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Tercer apartamento-->
+            <div class="col s12 m4 l4">
+                <div class="card animate fadeRight">
+                    <div class="card-content">
+                        <p>Smartphone</p>
+                        <span class="card-title">iPhone x</span>
+                        <img src="https://i.ibb.co/6ZpqfX1/apa-002.jpg" class="responsive-img" alt="">
+                        <div class="display-flex flex-wrap justify-content-center">
+                            <h5 class="mt-3">$899.00</h5>
+                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal3">View</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal3" class="modal" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
+                    <div class="modal-content">
+                        <a class="modal-close right"><i class="material-icons">close</i></a>
+                        <div class="row" id="product-three">
+                            <div class="col m6 s12">
+                                <img src="eCommerce%20Products%20Page%20|%20Materialize%20-%20Material%20Design%20Admin%20Template_files/iphone-x.png" class="responsive-img" alt="">
+                            </div>
+                            <div class="col m6 s12">
+                                <p>Smartphone</p>
+                                <h5>iPhone x</h5>
+                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
+                                <p>Availability: <span class="green-text">Available</span></p>
+                                <hr class="mb-5">
+                                <span class="vertical-align-top mr-4"><i class="material-icons mr-3">favorite_border</i>Wishlist</span>
+                                <ul class="list-bullet">
+                                    <li class="list-item-bullet">Accept SIM card and call</li>
+                                    <li class="list-item-bullet">Take photos</li>
+                                    <li class="list-item-bullet">Make calling instead of mobile phone</li>
+                                    <li class="list-item-bullet">Sync music play and sync control music</li>
+                                    <li class="list-item-bullet">Sync Facebook,Twiter,emailand calendar</li>
+                                </ul>
+                                <h5>$899.00</h5>
+                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">ADD TO CART</a>
+                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">BUY NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Pagination -->
-        <!--
             <div class="col s12 center">
                 <ul class="pagination">
                     <li class="disabled">
@@ -356,6 +445,5 @@
                     </li>
                 </ul>
             </div>
-        -->
         </div>
     </div>

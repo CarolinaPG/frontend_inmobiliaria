@@ -16,7 +16,7 @@ export class CrearClienteComponent implements OnInit {
     'celular': ['', [Validators.required]],
     'id': ['', [Validators.required]],
     'email': ['', [Validators.required, Validators.email]],
-    'recaptcha': [[Validators.required]],
+    'recaptcha': [[Validators.requiredTrue]],
   });
 
   constructor(

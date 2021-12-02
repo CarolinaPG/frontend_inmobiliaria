@@ -17,6 +17,8 @@ Comandos de los paquetes que se requisiró instalar
 
 > npm install --save @types/crypto-js
 
+> ng add @angular/material
+
 
 ### Comandos para crear el frontend
 

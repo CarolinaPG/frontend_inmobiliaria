@@ -1,24 +1,25 @@
 <nav>
+  <div class="container">
     <div class="nav-wrapper">
       <a routerLink="inicio" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Personas</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/inmuebles">Inmuebles</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-inmuebles">Inmuebles</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/solicitudes/listar-solicitudes">Solicitudes</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
         <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
         <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
         <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Personas</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/inmuebles">Inmuebles</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-inmuebles">Inmuebles</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/solicitudes/listar-solicitudes">Solicitudes</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
     <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
     <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
     <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
 </ul>
-        
