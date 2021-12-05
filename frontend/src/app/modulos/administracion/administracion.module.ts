@@ -19,6 +19,7 @@ import { EditarInmuebleComponent } from './inmuebles/editar-inmueble/editar-inmu
 import { EliminarInmuebleComponent } from './inmuebles/eliminar-inmueble/eliminar-inmueble.component';
 import { BuscarInmuebleComponent } from './inmuebles/buscar-inmueble/buscar-inmueble.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdministracionRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    //NgbModal,
   ]
 })
 export class AdministracionModule { }

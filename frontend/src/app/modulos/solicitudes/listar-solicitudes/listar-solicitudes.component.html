@@ -115,3 +115,31 @@
 <!-- END: Page Main-->
 
       
+
+<div class="w3-container">
+  <h2>W3.CSS Modal Image Gallery</h2>
+  <p>Click on the images to display them in full size.</p>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-container w3-third">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1zoom.me%2Fes%2Fwallpaper%2F575380%2Fz1439.5%2F3840x2400&psig=AOvVaw0PCYmTfthXiyNhTihS5hzE&ust=1638592253485000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJj_m_zlxvQCFQAAAAAdAAAAABAD" style="width:100%;cursor:pointer" 
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+  <div class="w3-container w3-third">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.online-image-editor.com%2F%3Flanguage%3Dspanish&psig=AOvVaw0PCYmTfthXiyNhTihS5hzE&ust=1638592253485000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJj_m_zlxvQCFQAAAAAdAAAAABAO" style="width:100%;cursor:pointer" 
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+  <div class="w3-container w3-third">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.educaciontrespuntocero.com%2Frecursos%2Fmejores-bancos-de-imagenes%2F&psig=AOvVaw0PCYmTfthXiyNhTihS5hzE&ust=1638592253485000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJj_m_zlxvQCFQAAAAAdAAAAABAd" style="width:100%;cursor:pointer" 
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+</div>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img01" style="width:100%">
+  </div>
+</div>
+

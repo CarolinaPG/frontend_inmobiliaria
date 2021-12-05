@@ -1,4 +1,4 @@
 export class ModeloEstado{
-    id?: string;
+    id?: number;
     nombre?: string;
 }

@@ -1,7 +1,10 @@
-    <!-- Tables -->
+
+<!-- Tables -->
+<div class="">
     <div class="row">
         <div class="col s12">
-            <h2 class="section-title">Inmuebles</h2>
+            <h1 class="section-title"><strong>Tabla con todos los inmuebles</strong></h1>
+            <p>En la tabla puedes encontrar todos los inmuebles que tenemos en la inmobiliaria "Hogar Colombia"</p>
   
             <div class="card">
                 <div id="table-custom-elements_wrapper" class="dataTables_wrapper no-footer">
@@ -14,15 +17,16 @@
                                 <table class="row-border dataTable no-footer" role="grid" style="margin-left: 0px; width: 1248px;" width="100%" cellspacing="0">
                                     <thead>
                                         <tr role="row">
-                                            <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=""><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></th>
+                                            <!--th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=""><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></th-->
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 80px;" aria-label="Código: activate to sort column ascending">No.</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px;" aria-label="Código: activate to sort column ascending">Código</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Dirección: activate to sort column ascending">Dirección</th>
-                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Valor: activate to sort column ascending">Departamento</th>
-                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Ciudad</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Valor: activate to sort column ascending">Lugar</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Valor</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Tipo</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Estado</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Fotografía</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Video</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Video</th>
                                         </tr>
                                         </thead>
@@ -33,102 +37,55 @@
                             <table id="table-custom-elements" class="row-border dataTable no-footer" role="grid" aria-describedby="table-custom-elements_info" style="width: 100%;" width="100%" cellspacing="0">
                                 <thead>
                                     <tr role="row" style="height: 0px;">
-                                        <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="">
-                                            <div class="dataTables_sizing" style="height:0;overflow:hidden;"><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></div></th>
+                                        <!--th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="">
+                                            <div class="dataTables_sizing" style="height:0;overflow:hidden;"><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></div></th-->
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 80px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">No.</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Código</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Direccioón</div></th>
-                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Departamento</div></th>
-                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Ciudad</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Lugar</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Valor</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Tipo</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Estado</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Fotografía</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Youtube</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Youtube</div></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                    <tr *ngFor="let i of listadoRegistrosLibres" role="row" class="odd">
+                                        <!--td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td-->
+                                        <td><span>{{listadoRegistros.indexOf(i) + 1}}. </span></td>
+                                        <td><span>{{i.codigo}}</span></td>
+                                        <td><span>{{i.direccion}}</span></td>
+                                        <td><span class="new badge purple" data-badge-caption="">{{i.ciudad?.nombre}}</span><br>
+                                            <span class="new badge purple" data-badge-caption="">{{i.departamento}}</span></td>
+                                        <td><strong><h5>${{i.valor}}</h5></strong></td>
+                                        <td><span class="new badge" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
+                                            <span class="new badge green" data-badge-caption="">{{i.tipoO?.nombre}}</span></td>
+                                        <td><span class="new badge red" data-badge-caption="">{{i.estado?.nombre}}</span></td>
+                                        <td><img src="{{i.fotografia}}" onclick="onClick(this)" class="imagenInmueble" alt=""></td>
                                         <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad}}</td>
-                                        <td>${{i.valor}}</td>
-                                        <td><span class="new badge blue" data-badge-caption="">Casa</span><br>
-                                            <span class="new badge green" data-badge-caption="">Alquiler</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">LIBRE</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
+                                        <!--td>
+                                            <button class="btn btn-sm btn-info" (click)="openModal(template)">
+                                                <i class="fa fa-search"></i>Details
+                                            </button>
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="fa fa-edit"></i>Edit
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-remove"></i>Delete
+                                            </button>
+                                            <button class="btn btn-outline-primary mr-2" (click)="openModal(template1)">
+                                                <div>Open confirm modal</div>
+                                                <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+                                            </button>
+                                        </td-->
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
                     <div class="footer-wrapper">
                         <div class="dataTables_length" id="table-custom-elements_length">
                             <label>Show 
@@ -175,15 +132,49 @@
             </div>
         </div>
     </div>
+</div>
+
+<!--div class="row s6">
+    <div class="col s4">
+        <button class="btn btn-sm btn-info" >
+            <i class="fa fa-search"></i>Details
+        </button>
+    </div>
+    <div class="col s4">
+        <button class="btn btn-sm btn-warning">
+            <i class="fa fa-edit"></i>Edit
+        </button>
+    </div>
+    <div class="col s4">
+        <button class="btn btn-sm btn-danger">
+            <i class="fa fa-remove"></i>Delete
+        </button>
+    </div>
+</div-->
 
 <!-- END: Page Main-->
 
 
-
-<div class="section" id="main">
-    <div class="row s12" id="ecommerce-inmuebles">
+<div class="section">
+    <!-- Page Layout here -->
+    <div class="row">
+        <div class="row">
+            <div class="col s1">1</div>
+            <div class="col s1">2</div>
+            <div class="col s1">3</div>
+            <div class="col s1">4</div>
+            <div class="col s1">5</div>
+            <div class="col s1">6</div>
+            <div class="col s1">7</div>
+            <div class="col s1">8</div>
+            <div class="col s1">9</div>
+            <div class="col s1">10</div>
+            <div class="col s1">11</div>
+            <div class="col s1">12</div>
+          </div>
+        <!--div class="col s8 push-s4  "-->
+        <div class="col-md-2">
         <!--Lado izquierdo donde se muestran los filtros de filtros-->
-        <div class="col s3 hide-on-med-and-down animate fadeLeft">
             <div class="card">
                 <div class="card-content">
                     <!--Categorias-->
@@ -203,11 +194,6 @@
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                     </ul>
-                    <!--Time Picker-->
-                    <span class="card-title">Time picker</span>
-                    <hr class="p-0 mb-10">
-                    <input type="text" class="datepicker">
-                    
                     <!--Prices-->
                     <span class="card-title mt-10">Price</span>
                     <hr class="p-0 mb-10">
@@ -235,7 +221,6 @@
                         </div>
                     </div>
                     </div>
-                    
                     <!--Color-->
                     <span class="card-title mt-10">Color</span>
                     <hr class="p-0 mb-10">
@@ -258,7 +243,6 @@
                         <span><i class="material-icons vertical-align-bottom blue-text"> lens </i> Blue</span>
                     </label><br>
                     </form>
-    
                     <!---->
                     <span class="card-title mt-10">Brand</span>
                     <hr class="p-0 mb-10">
@@ -272,7 +256,6 @@
                         <span>Samsung</span>
                     </label><br>
                     </form>
-    
                     <!---->
                     <span class="card-title mt-10">Offers</span>
                     <hr class="p-0 mb-10">
@@ -296,136 +279,97 @@
                     </form>
                 </div>
             </div>
+
+
+  <nav> <!-- navbar content here  --> </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
         </div>
-        
-        <!--Lado derecho donde se muestran los apartamentos-->
-        <div class="col s9 pr-0">
+
+        <div class="col-md-10">
+            <!--Lado derecho donde se muestran los apartamentos-->
             <!--Primer apartamento-->
-            <div *ngFor="let i of listadoRegistros" class="col s12 m4 l4">
+            <div *ngFor="let i of listadoRegistros" class="col s12 m4 l3">
                 <div class="card animate fadeLeft">
                     <div class="card-content">
-                        <p>{{i.tipoIn}} - {{i.tipoOf}}</p>
-                        <span class="card-title text-ellipsis">{{i.codigo}}</span>
-                        <img src="{{i.fotografia}}" class="responsive-img" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h5 class="mt-3">${{i.valor}}</h5>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal1">View</a>
-                            </div>
+                        <a class="btn-floating btn-small waves-effect waves-light green right" (click)="openModal(modal1)"><i class="material-icons">remove_red_eye</i></a>
+                        <p><span class="card-title text-ellipsis left-align purple-text"><strong>{{listadoRegistros.indexOf(i) +1}}.  {{i.codigo}}</strong>
+                        </span></p>
+                        <img src="{{i.fotografia}}" class="responsive-img imagenInmueble1" alt="">
+                        <h2 class="mt-3 center-align pink-text"><strong>${{i.valor}}</strong></h2>
                     </div>
                 </div>
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal" tabindex="0">
-                    <div class="modal-content pt-2">
-                        <div class="row" id="product-one">
-                            <div class="col s12">
-                                <a class="modal-close right"><i class="material-icons">close</i></a>
+                <ng-template #modal1>
+                    <div class="modal-header">
+                        <h1 class="modal-title pull-left"><strong>{{i.codigo}}</strong></h1>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row col s12">
+                            <img src="{{i.fotografia}}" class="imagenInmueble2" alt="">
+                        </div>
+                        <div class="row ">
+                            <div class="col s4">
+                                <span class="new badge red center-align" data-badge-caption="">{{i.estado?.nombre}}</span>
                             </div>
-                            <div class="col m6 s12">
-                                <img src="{{i.fotografia}}" class="responsive-img" alt="">
+                            <div class="col s4">
+                                <span class="new badge blue center-align" data-badge-caption="">{{i.tipoIn?.nombre}}</span>
                             </div>
-                            <div class="col m6 s12">
-                                <p>{{i.tipoIn}} - {{i.tipoOf}}</p>
-                                <h5>{{i.codigo}}</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="green-text">{{i.estado}}</span></p>
-                                <hr class="mb-5">
-                                <h5>$399.00 <span class="prise-text-style ml-2">$459.00</span></h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">SOLICITAR</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">CONTACTAR CON EL ASESOR</a>
+                            <div class="col s4">
+                                <span class="new badge green center-align" data-badge-caption="">{{i.tipoO?.nombre}}</span>
                             </div>
                         </div>
+                        <div class="row ">
+                            <div class="col s12 center-align">
+                                <h1><p>Valor: <span class="blue-text"><strong>${{i.valor}}</strong></span></p></h1>
+                            </div>
+                        </div>
+                        <!--hr class="mb-5"-->
+                        <div class="row ">
+                            <!--div class="col s2"></div-->
+                            <div class="col s12 center-align">
+                                <p class="center-align">Dirección: <span class="purple-text"><strong>{{i.direccion}}</strong></span></p>
+                            </div>
+                            <!--div class="col s2"></div-->
+                        </div>
+                        <div class="row ">
+                            <div class="col s3"></div>
+                            <div class="col s3">
+                                <p><span class="new badge purple center-align" data-badge-caption="">{{i.ciudad?.nombre}}</span></p><br>
+                            </div>
+                            <div class="col s3">
+                                <p><span class="new badge purple center-align" data-badge-caption="">{{i.departamento}}</span></p>
+                            </div>
+                            <div class="col s3"></div>
+                        </div>
+                        <!--hr class="mb-5"-->
                     </div>
-                </div>
-            </div>
+                    <!--div class="modal-footer">
+                    </div-->
 
-            <!--Segundo apartamento-->
-            <div class="col s12 m4 l4">
-                <div class="card animate fadeUp">
-                    <div class="card-content">
-                        <p>Headphone</p>
-                        <span class="card-title text-ellipsis">Purple Solo 2 Wireless</span>
-                        <img src="https://i.ibb.co/6ZpqfX1/apa-002.jpg" class="responsive-img" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h5 class="mt-3">$249.00</h5>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal2">View</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Modal Structure -->
-                <div id="modal2" class="modal" tabindex="0">
-                    <div class="modal-content">
-                        <a class="modal-close right"><i class="material-icons">close</i></a>
-                        <div class="row" id="product-two">
-                            <div class="col m6 s12">
-                                <img src="eCommerce%20Products%20Page%20|%20Materialize%20-%20Material%20Design%20Admin%20Template_files/headphone.png" class="responsive-img" alt="">
-                            </div>
-                            <div class="col m6 s12">
-                                <p>Headphone</p>
-                                <h5>Purple Solo 2 Wireless</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="red-text">Out of stock</span></p>
-                                <hr class="mb-5">
-                                <span class="vertical-align-top mr-4"><i class="material-icons mr-3">favorite_border</i>Wishlist</span>
-                                <ul class="list-bullet">
-                                    <li class="list-item-bullet">Fine-tuned acoustics for clarity</li>
-                                    <li class="list-item-bullet">Streamlined design for a custom-fit</li>
-                                    <li class="list-item-bullet">Durable and foldable so you can take them on-the-go</li>
-                                    <li class="list-item-bullet">ake calls and control music with RemoteTalk cable</li>
-                                </ul>
-                                <h5>$249.00 <span class="prise-text-style ml-2">$559.00</span></h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">ADD TO CART</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">BUY NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </ng-template>
             </div>
-            
-            <!--Tercer apartamento-->
-            <div class="col s12 m4 l4">
-                <div class="card animate fadeRight">
-                    <div class="card-content">
-                        <p>Smartphone</p>
-                        <span class="card-title">iPhone x</span>
-                        <img src="https://i.ibb.co/6ZpqfX1/apa-002.jpg" class="responsive-img" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h5 class="mt-3">$899.00</h5>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal3">View</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal Structure -->
-                <div id="modal3" class="modal" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
-                    <div class="modal-content">
-                        <a class="modal-close right"><i class="material-icons">close</i></a>
-                        <div class="row" id="product-three">
-                            <div class="col m6 s12">
-                                <img src="eCommerce%20Products%20Page%20|%20Materialize%20-%20Material%20Design%20Admin%20Template_files/iphone-x.png" class="responsive-img" alt="">
-                            </div>
-                            <div class="col m6 s12">
-                                <p>Smartphone</p>
-                                <h5>iPhone x</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="green-text">Available</span></p>
-                                <hr class="mb-5">
-                                <span class="vertical-align-top mr-4"><i class="material-icons mr-3">favorite_border</i>Wishlist</span>
-                                <ul class="list-bullet">
-                                    <li class="list-item-bullet">Accept SIM card and call</li>
-                                    <li class="list-item-bullet">Take photos</li>
-                                    <li class="list-item-bullet">Make calling instead of mobile phone</li>
-                                    <li class="list-item-bullet">Sync music play and sync control music</li>
-                                    <li class="list-item-bullet">Sync Facebook,Twiter,emailand calendar</li>
-                                </ul>
-                                <h5>$899.00</h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">ADD TO CART</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">BUY NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Pagination -->
+        <!-- Pagination -->
+        <!--
             <div class="col s12 center">
                 <ul class="pagination">
                     <li class="disabled">
@@ -445,5 +389,9 @@
                     </li>
                 </ul>
             </div>
+        -->
+
         </div>
-    </div>
+
+    </div>   
+</div>

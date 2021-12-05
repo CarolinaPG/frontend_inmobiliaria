@@ -31,7 +31,7 @@ export class InmuebleService {
   ObtenerRegistros(): Observable<ModeloInmueble[]>{
     //filt=['asesor', 'ciudad', 'tipoIn', 'tipoO', 'estado']
     //http://localhost:3000/inmuebles?filter[include][0]=asesor&filter[include][1]=ciudad&filter[include][2]=tipoO&filter[include][3]=tipoIn&filter[include][4]=estado
-    let datos = this.http.get<ModeloInmueble[]>(`${this.url}/inmuebles?filter[include][0]=asesor&filter[include][1]=ciudad&filter[include][2]=tipoO&filter[include][3]=tipoIn&filter[include][4]=estado`);
+    let datos = this.http.get<ModeloInmueble[]>(`${this.url}/inmuebles`);
     return datos;
   }
 

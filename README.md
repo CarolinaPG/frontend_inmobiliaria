@@ -17,7 +17,10 @@ Comandos de los paquetes que se requisiró instalar
 
 > npm install --save @types/crypto-js
 
+> npm install --save @ng-bootstrap/ng-bootstrap@"*" --legacy-peer-deps
+
 > ng add @angular/material
+
 
 
 ### Comandos para crear el frontend

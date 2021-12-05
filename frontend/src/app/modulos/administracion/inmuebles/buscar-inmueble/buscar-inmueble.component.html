@@ -1,8 +1,10 @@
+
 <!-- Tables -->
 <div class="">
     <div class="row">
         <div class="col s12">
-            <h1 class="section-title"><strong>Inmuebles</strong></h1>
+            <h1 class="section-title"><strong>Tabla con todos los inmuebles</strong></h1>
+            <p>En la tabla puedes encontrar todos los inmuebles que tenemos en la inmobiliaria "Hogar Colombia"</p>
   
             <div class="card">
                 <div id="table-custom-elements_wrapper" class="dataTables_wrapper no-footer">
@@ -15,15 +17,16 @@
                                 <table class="row-border dataTable no-footer" role="grid" style="margin-left: 0px; width: 1248px;" width="100%" cellspacing="0">
                                     <thead>
                                         <tr role="row">
-                                            <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=""><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></th>
+                                            <!--th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=""><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></th-->
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 80px;" aria-label="Código: activate to sort column ascending">No.</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px;" aria-label="Código: activate to sort column ascending">Código</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Dirección: activate to sort column ascending">Dirección</th>
-                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Valor: activate to sort column ascending">Departamento</th>
-                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Ciudad</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Valor: activate to sort column ascending">Lugar</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Valor</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Tipo</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Estado</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Fotografía</th>
+                                            <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Video</th>
                                             <th class="sorting" tabindex="0" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px;" aria-label="Tipo: activate to sort column ascending">Video</th>
                                         </tr>
                                         </thead>
@@ -34,45 +37,49 @@
                             <table id="table-custom-elements" class="row-border dataTable no-footer" role="grid" aria-describedby="table-custom-elements_info" style="width: 100%;" width="100%" cellspacing="0">
                                 <thead>
                                     <tr role="row" style="height: 0px;">
-                                        <th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="">
-                                            <div class="dataTables_sizing" style="height:0;overflow:hidden;"><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></div></th>
+                                        <!--th class="dataTables-checkbox-column sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="">
+                                            <div class="dataTables_sizing" style="height:0;overflow:hidden;"><label><input class="filled-in select-all" name="select_all" value="1" type="checkbox"><span></span></label></div></th-->
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 80px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">No.</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 221px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Código</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Direccioón</div></th>
-                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Departamento</div></th>
-                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Ciudad</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Lugar</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Valor</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Tipo</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Estado</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Fotografía</div></th>
                                         <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Youtube</div></th>
+                                        <th class="sorting" aria-controls="table-custom-elements" rowspan="1" colspan="1" style="width: 335px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Position: activate to sort column ascending"><div class="dataTables_sizing" style="height:0;overflow:hidden;">Youtube</div></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad?.nombre}}</td>
+                                    <tr *ngFor="let i of listadoRegistrosLibres" role="row" class="odd">
+                                        <!--td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td-->
+                                        <td><span>{{listadoRegistros.indexOf(i) + 1}}. </span></td>
+                                        <td><span>{{i.codigo}}</span></td>
+                                        <td><span>{{i.direccion}}</span></td>
+                                        <td><span class="new badge purple" data-badge-caption="">{{i.ciudad?.nombre}}</span><br>
+                                            <span class="new badge purple" data-badge-caption="">{{i.departamento}}</span></td>
                                         <td><strong><h5>${{i.valor}}</h5></strong></td>
-                                        <td><span class="new badge blue" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
+                                        <td><span class="new badge" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
                                             <span class="new badge green" data-badge-caption="">{{i.tipoO?.nombre}}</span></td>
                                         <td><span class="new badge red" data-badge-caption="">{{i.estado?.nombre}}</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
+                                        <td><img src="{{i.fotografia}}" onclick="onClick(this)" class="imagenInmueble" alt=""></td>
                                         <td>{{i.videoYoutube}}</td>
-                                    </tr>
-                                    <tr *ngFor="let i of listadoRegistros" role="row" class="odd">
-                                        <td class=" dataTables-checkbox-column"><label><input class="filled-in" type="checkbox" name="id[]" value="1"><span></span></label></td>
-                                        <td>{{i.codigo}}</td>
-                                        <td>{{i.direccion}}</td>
-                                        <td>{{i.departamento}}</td>
-                                        <td>{{i.ciudad?.nombre}}</td>
-                                        <td><strong><h5>${{i.valor}}</h5></strong></td>
-                                        <td><span class="new badge blue" data-badge-caption="">{{i.tipoIn?.nombre}}</span><br>
-                                            <span class="new badge green" data-badge-caption="">{{i.tipoO?.nombre}}</span></td>
-                                        <td><span class="new badge red" data-badge-caption="">{{i.estado?.nombre}}</span></td>
-                                        <td><img src="{{i.fotografia}}" class="imagenInmueble" alt=""></td>
-                                        <td>{{i.videoYoutube}}</td>
+                                        <!--td>
+                                            <button class="btn btn-sm btn-info" (click)="openModal(template)">
+                                                <i class="fa fa-search"></i>Details
+                                            </button>
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="fa fa-edit"></i>Edit
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fa fa-remove"></i>Delete
+                                            </button>
+                                            <button class="btn btn-outline-primary mr-2" (click)="openModal(template1)">
+                                                <div>Open confirm modal</div>
+                                                <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+                                            </button>
+                                        </td-->
                                     </tr>
                                 </tbody>
                             </table>
@@ -127,215 +134,108 @@
     </div>
 </div>
 
-<!-- END: Page Main-->
+<!--div class="row s6">
+    <div class="col s4">
+        <button class="btn btn-sm btn-info" >
+            <i class="fa fa-search"></i>Details
+        </button>
+    </div>
+    <div class="col s4">
+        <button class="btn btn-sm btn-warning">
+            <i class="fa fa-edit"></i>Edit
+        </button>
+    </div>
+    <div class="col s4">
+        <button class="btn btn-sm btn-danger">
+            <i class="fa fa-remove"></i>Delete
+        </button>
+    </div>
+</div-->
 
-
-
-<div class="section" id="main">
-    <div class="row s12" id="ecommerce-inmuebles">
-
-        <!--Lado izquierdo donde se muestran los filtros de filtros-->
-        <!--
-        <div class="col s3 hide-on-med-and-down animate fadeLeft">
-            <div class="card">
-                <div class="card-content">
-        -->
-                    <!--Categorias-->
-        <!-- 
-                    <span class="card-title">Categories</span>
-                    <hr class="p-0 mb-10">
-                    <ul class="collapsible">
-                        <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                    </ul>
-        -->
-                    <!--Time Picker-->
-        <!--
-                    <span class="card-title">Time picker</span>
-                    <hr class="p-0 mb-10">
-                    <input type="text" class="datepicker">
-        -->            
-                    <!--Prices-->
-        <!--
-                    <span class="card-title mt-10">Price</span>
-                    <hr class="p-0 mb-10">
-                    <div id="test-slider"></div>
-                    
-                    <form action="#">
-                    <p class="range-field">
-                        <input type="range" id="test5" min="0" max="100" />
-                    </p>
-                    </form>
-                    <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal">
-                    <div class="noUi-base">
-                        <div class="noUi-origin" style="left: 20%;">
-                        <div class="noUi-handle noUi-handle-lower" data-handle="0" style="z-index: 5;">
-                            <div class="noUi-handle-touch-area"></div>
-                            <div class="noUi-tooltip"><span>20</span></div>
-                        </div>
-                        </div>
-                        <div class="noUi-connect" style="left: 20%; right: 20%;"></div>
-                        <div class="noUi-origin" style="left: 80%;">
-                        <div class="noUi-handle noUi-handle-upper" data-handle="1" style="z-index: 4;">
-                            <div class="noUi-handle-touch-area"></div>
-                            <div class="noUi-tooltip"><span>80</span></div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-        -->            
-                    <!--Color-->
-        <!--
-                    <span class="card-title mt-10">Color</span>
-                    <hr class="p-0 mb-10">
-                    <form action="#" class="display-grid">
-                    <label class="mt-3">
-                        <input type="checkbox">
-                        <span><i class="material-icons vertical-align-bottom blue-grey-text text-lighten-5"> lens </i>
-                        White</span>
-                    </label><br>
-                    <label class="mt-3">
-                        <input type="checkbox">
-                        <span><i class="material-icons vertical-align-bottom black-text"> lens </i> Black</span>
-                    </label><br>
-                    <label class="mt-3">
-                        <input type="checkbox">
-                        <span><i class="material-icons vertical-align-bottom amber-text"> lens </i> Amber</span>
-                    </label><br>
-                    <label class="mt-3">
-                        <input type="checkbox">
-                        <span><i class="material-icons vertical-align-bottom blue-text"> lens </i> Blue</span>
-                    </label><br>
-                    </form>
-        -->
-                    <!---->
-        <!--
-                    <span class="card-title mt-10">Brand</span>
-                    <hr class="p-0 mb-10">
-                    <form action="#" class="display-grid">
-                    <label>
-                        <input type="checkbox">
-                        <span>Apple</span>
-                    </label><br>
-                    <label>
-                        <input type="checkbox">
-                        <span>Samsung</span>
-                    </label><br>
-                    </form>
-        -->
-                    <!---->
-        <!--
-                    <span class="card-title mt-10">Offers</span>
-                    <hr class="p-0 mb-10">
-                    <form action="#" class="display-grid">
-                    <label>
-                        <input type="checkbox">
-                        <span>Offer</span>
-                    </label><br>
-                    <label>
-                        <input type="checkbox">
-                        <span>No Cost EMI</span>
-                    </label><br>
-                    <label>
-                        <input type="checkbox">
-                        <span>Special Price</span>
-                    </label><br>
-                    <label>
-                        <input type="checkbox">
-                        <span>Bank Offer</span>
-                    </label><br>
-                    </form>
-                </div>
-            </div>
-        </div>
-        -->
-        <!--Lado derecho donde se muestran los apartamentos-->
-        <div class="col s9 pr-0">
+<div class="section">
+    <!-- Page Layout here -->
+    <div class="row">
+        <div class="row">
+            <div class="col s1">1</div>
+            <div class="col s1">2</div>
+            <div class="col s1">3</div>
+            <div class="col s1">4</div>
+            <div class="col s1">5</div>
+            <div class="col s1">6</div>
+            <div class="col s1">7</div>
+            <div class="col s1">8</div>
+            <div class="col s1">9</div>
+            <div class="col s1">10</div>
+            <div class="col s1">11</div>
+            <div class="col s1">12</div>
+          </div>
+        <div class="col s12">
+            <!--Lado derecho donde se muestran los apartamentos-->
             <!--Primer apartamento-->
-            <div *ngFor="let i of listadoRegistros" class="col s12 m4 l4">
+            <div *ngFor="let i of listadoRegistros" class="col s12 m6 l3">
                 <div class="card animate fadeLeft">
                     <div class="card-content">
-                        <p>{{i.tipoIn?.nombre}} <br> {{i.tipoO?.nombre}}</p>
-                        <span class="card-title text-ellipsis">{{i.codigo}}</span>
+                        <a class="btn-floating btn-small waves-effect waves-light green right" (click)="openModal(modal1)"><i class="material-icons">remove_red_eye</i></a>
+                        <p><span class="card-title text-ellipsis left-align purple-text"><strong>{{listadoRegistros.indexOf(i) +1}}.  {{i.codigo}}</strong>
+                        </span></p>
                         <img src="{{i.fotografia}}" class="responsive-img imagenInmueble1" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h2 class="mt-3">${{i.valor}}</h2>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal1">View</a>
-                            </div>
+                        <h2 class="mt-3 center-align pink-text"><strong>${{i.valor}}</strong></h2>
                     </div>
                 </div>
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal" tabindex="0">
-                    <div class="modal-content pt-2">
-                        <div class="row" id="product-one">
-                            <div class="col s12">
-                                <a class="modal-close right"><i class="material-icons">close</i></a>
+                <ng-template #modal1>
+                    <div class="modal-header">
+                        <h1 class="modal-title pull-left"><strong>{{i.codigo}}</strong></h1>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row col s12">
+                            <img src="{{i.fotografia}}" class="imagenInmueble2" alt="">
+                        </div>
+                        <div class="row ">
+                            <div class="col s4">
+                                <span class="new badge red center-align" data-badge-caption="">{{i.estado?.nombre}}</span>
                             </div>
-                            <div class="col m6 s12">
-                                <img src="{{i.fotografia}}" class="responsive-img" alt="">
+                            <div class="col s4">
+                                <span class="new badge blue center-align" data-badge-caption="">{{i.tipoIn?.nombre}}</span>
                             </div>
-                            <div class="col m6 s12">
-                                <p>{{i.tipoIn}} - {{i.tipoO}}</p>
-                                <h5>{{i.codigo}}</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="green-text">{{i.estado}}</span></p>
-                                <hr class="mb-5">
-                                <h5>$399.00 <span class="prise-text-style ml-2">$459.00</span></h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">SOLICITAR</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">CONTACTAR CON EL ASESOR</a>
+                            <div class="col s4">
+                                <span class="new badge green center-align" data-badge-caption="">{{i.tipoO?.nombre}}</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div *ngFor="let i of listadoRegistros" class="col s12 m4 l4">
-                <div class="card animate fadeLeft">
-                    <div class="card-content">
-                        <p>{{i.tipoIn?.nombre}} <br> {{i.tipoO?.nombre}}</p>
-                        <span class="card-title text-ellipsis">{{i.codigo}}</span>
-                        <img src="{{i.fotografia}}" class="responsive-img imagenInmueble1" alt="">
-                        <div class="display-flex flex-wrap justify-content-center">
-                            <h2 class="mt-3">${{i.valor}}</h2>
-                            <a class="mt-2 waves-effect waves-light gradient-45deg-deep-purple-blue btn btn-block modal-trigger z-depth-4" href="#modal1">View</a>
-                            </div>
-                    </div>
-                </div>
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal" tabindex="0">
-                    <div class="modal-content pt-2">
-                        <div class="row" id="product-one">
-                            <div class="col s12">
-                                <a class="modal-close right"><i class="material-icons">close</i></a>
-                            </div>
-                            <div class="col m6 s12">
-                                <img src="{{i.fotografia}}" class="responsive-img" alt="">
-                            </div>
-                            <div class="col m6 s12">
-                                <p>{{i.tipoIn}} - {{i.tipoO}}</p>
-                                <h5>{{i.codigo}}</h5>
-                                <span class="new badge left ml-0 mr-2" data-badge-caption="">4.2 Star</span>
-                                <p>Availability: <span class="green-text">{{i.estado}}</span></p>
-                                <hr class="mb-5">
-                                <h5>$399.00 <span class="prise-text-style ml-2">$459.00</span></h5>
-                                <a class="waves-effect waves-light btn gradient-45deg-deep-purple-blue mt-2 mr-2">SOLICITAR</a>
-                                <a class="waves-effect waves-light btn gradient-45deg-purple-deep-orange mt-2">CONTACTAR CON EL ASESOR</a>
+                        <div class="row ">
+                            <div class="col s12 center-align">
+                                <h1><p>Valor: <span class="blue-text"><strong>${{i.valor}}</strong></span></p></h1>
                             </div>
                         </div>
+                        <!--hr class="mb-5"-->
+                        <div class="row ">
+                            <!--div class="col s2"></div-->
+                            <div class="col s12 center-align">
+                                <p class="center-align">Dirección: <span class="purple-text"><strong>{{i.direccion}}</strong></span></p>
+                            </div>
+                            <!--div class="col s2"></div-->
+                        </div>
+                        <div class="row ">
+                            <div class="col s3"></div>
+                            <div class="col s3">
+                                <p><span class="new badge purple center-align" data-badge-caption="">{{i.ciudad?.nombre}}</span></p><br>
+                            </div>
+                            <div class="col s3">
+                                <p><span class="new badge purple center-align" data-badge-caption="">{{i.departamento}}</span></p>
+                            </div>
+                            <div class="col s3"></div>
+                        </div>
+                        <!--hr class="mb-5"-->
                     </div>
-                </div>
-            </div>
+                    <!--div class="modal-footer">
+                    </div-->
 
-            <!-- Pagination -->
+                </ng-template>
+            </div>
+        <!-- Pagination -->
         <!--
             <div class="col s12 center">
                 <ul class="pagination">
@@ -357,5 +257,8 @@
                 </ul>
             </div>
         -->
+
         </div>
-    </div>
+
+    </div>   
+</div>

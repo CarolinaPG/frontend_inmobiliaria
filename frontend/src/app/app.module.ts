@@ -9,6 +9,11 @@ import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// RECOMMENDED
+import { ModalModule } from 'ngx-bootstrap/modal';
+// or
+//import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

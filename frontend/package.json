@@ -21,8 +21,12 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@types/crypto-js": "^4.0.2",
+    "angular-material": "^1.2.3",
+    "bootstrap": "^4.5.3",
     "crypto-js": "^4.1.1",
+    "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0-rc.2",
+    "ngx-bootstrap": "^7.1.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
