@@ -21,14 +21,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-buscar-inmuebles',
-  templateUrl: './buscar-inmueble.component.html',
-  styleUrls: ['./buscar-inmueble.component.css']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-export class BuscarInmuebleComponent implements OnInit {
+export class TableComponent implements OnInit {
 
   constructor() { }
 
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = ELEMENT_DATA;
+  
   ngOnInit(): void {
   }
 

@@ -1,55 +1,78 @@
+ 
+  <mat-vertical-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Nombres y Apellidos</ng-template>
+        <div>
+        <mat-form-field>
+          <input matInput placeholder="Nombres" formControlName="nombres" required>
+        </mat-form-field>
+        </div>
+        <mat-form-field>
+          <input matInput placeholder="Apellidos" formControlName="apellidos" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Tipo y Número de Documento</ng-template>
+        <mat-form-field appearance="fill">
+            <!--mat-label>Tipo de Id</mat-label-->
+            <mat-select formControlName="tipoId">
+              <mat-option value="Cédula de Ciudadanía">Cédula de Ciudadanía</mat-option>
+              <mat-option value="Carné Diplomático">Carné Diplomático</mat-option>
+              <mat-option value="Pasaporte">Pasaporte</mat-option>
+              <mat-option value="Cédula de Extranjería">Cédula de Extranjería</mat-option>
+              <mat-option value="Pasaporte de la ONU">Pasaporte de la ONU</mat-option>
+              <mat-option value="Permiso Especial de Permanencia">Permiso Especial de Permanencia</mat-option>
+              <mat-option value="NIT">NIT</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+          <mat-form-field>
+            <input matInput placeholder="Documento" formControlName="id" required>
+          </mat-form-field>
+          </div>
+          <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Celular y Dirección</ng-template>
+            <div>
+            <mat-form-field>
+            <input matInput placeholder="Celular" formControlName="celular" required>
+          </mat-form-field>
+            </div>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email" required>
+            </mat-form-field>
+            <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+      <div class="row">
+        <div class="input-field col s6 center-align" >
+          <button class="btn waves-effect waves-light" type="submit" (click)="registrarCliente()" name="action">REGISTER
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
 
-<div class="container section">
-<h3 class="center-align" >Registrar Cliente</h3>
-<div class="row">
-  <form  [formGroup]="fgValidador" class="col s12" (ngSubmit)="RegistrarCliente()">
-    <div class="row">
-      <div class="input-field col s6">
-        <i class="material-icons prefix">account_circle</i>
-        <input formControlName="nombres" id="txtNombres" type="text" class="validate">
-        <label for="txtNombres">Nombres</label>
-      </div>
-      <div class="input-field col s6">
-        <!--i class="material-icons prefix">account_circle</i-->
-        <input formControlName="apellidos" id="txtApellidos" type="text" class="validate">
-        <label for="txtApellidos">Apellidos</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <i class="material-icons prefix">payment</i>
-        <input formControlName="id" id="txtId" type="tel" class="validate">
-        <label for="txtId">No. de Documento</label>
-      </div>
-      <div class="input-field col s6">
-        <i class="material-icons prefix">phone</i>
-        <input formControlName="celular" id="txtCelular" type="tel" class="validate">
-        <label for="txtCelular">Celular</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">email</i>
-        <input formControlName="email" id="txtEmail" type="email" class="validate">
-        <label for="txtEmail">Email</label>
-      </div>      
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <label class="required">
-          <input formControlName="recaptcha" id="chkCaptcha" type="checkbox" />
-          <span>Yo no soy un robot</span>
-        </label>
-      </div>      
-    </div>
-    <div class="row">
-      <div class="input-field col s6 center-align" >
-        <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">REGISTRAR
-          <i class="material-icons right">send</i>
-        </button>
-      </div>      
-    </div>
-</form>
-</div>
-        
-</div>
+    </mat-step>
+  </mat-vertical-stepper>
+  

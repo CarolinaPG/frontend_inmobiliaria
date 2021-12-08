@@ -1,21 +1,30 @@
-<div class="container section">
-    <h3 class="center-align" >Recuperación de Contraseña</h3>
-    <div class="row center-align input-field col-sm-5">
-        <form [formGroup]="fgValidador" (ngSubmit)="RecuperarClave()" class="input-field col col-sm-8 ">
-          <div class="row">
-            <div class="input-field col-sm-12"> 
-              <i class="material-icons prefix">email</i>
-              <input formControlName="usuario" type="email" id="email" class="validate" />
-              <label for="email">Usuario</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col-sm-6 center-align" >
-              <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">INGRESAR
-                <i class="material-icons right">send</i>
-              </button>
-            </div>
-          </div>
-        </form>
+<div class="row input-field col-sm-6">
+
+  <form [formGroup]="fgValidador" (ngSubmit)="recuperarClave()" class="input-field">
+    <div class="imgcontainer">
+      <img src="http://www.compressedairspares.com.au/dashboard/assets/images/img_main.png" alt="Avatar" class="avatar">
     </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input formControlName="usuario" id="usuario" type="email" class="validate">
+          <label for="usuario">Usuario</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Su usuario es el correo con el que se registró.</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6 center-align" >
+          <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">SEND EMAIL
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+
+    </div>        
+  
+  </form> 
   </div>
+  

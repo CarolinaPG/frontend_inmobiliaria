@@ -1,7 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistroService } from 'src/app/servicios/registro.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+
+interface TipoId {
+  value: string;
+  viewValue: string;
+}
+
 
 
 @Component({
@@ -9,15 +17,14 @@ import { RegistroService } from 'src/app/servicios/registro.service';
   templateUrl: './crear-cliente.component.html',
   styleUrls: ['./crear-cliente.component.css'],
 })
+ 
 export class CrearClienteComponent implements OnInit {
-  fgValidador: FormGroup = this.fb.group({
-    'nombres': ['', [Validators.required]],
-    'apellidos': ['', [Validators.required]],
-    'celular': ['', [Validators.required]],
-    'id': ['', [Validators.required]],
-    'email': ['', [Validators.required, Validators.email]],
-    'recaptcha': [[Validators.requiredTrue]],
-  });
+  completed = false;
+
+  firstFormGroup!: FormGroup;
+  secondFormGroup!: FormGroup;
+  thirdFormGroup!: FormGroup;
+  isOptional = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,30 +33,49 @@ export class CrearClienteComponent implements OnInit {
 
     private router: Router,
 
-  ) {}
+    public dialog: MatDialogModule,
 
-  ngOnInit(): void {
-    //this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
+    private _formBuilder: FormBuilder,
+  ) { }
+
+  completeStep(): void{
+    this.completed = true;
   }
 
-  RegistrarCliente(){
-    let nombres = this.fgValidador.controls['nombres'].value;
-    let apellidos = this.fgValidador.controls['apellidos'].value;
-    let celular = this.fgValidador.controls['celular'].value;
-    let id = this.fgValidador.controls['id'].value;
-    let email = this.fgValidador.controls['email'].value;
-    let tipoId = "CEDULA";
+  ngOnInit(): void {
+    this.firstFormGroup = this._formBuilder.group({
+      nombres: ['', [Validators.required]],
+      apellidos: ['', [Validators.required]]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      tipoId: ['', [Validators.required]],
+      id: ['', [Validators.required]]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      celular: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+  registrarCliente(){
+    let nombres = this.firstFormGroup.controls['nombres'].value;
+    let apellidos = this.firstFormGroup.controls['apellidos'].value;
+    let tipoId = this.secondFormGroup.controls['tipoId'].value;
+    let id = this.secondFormGroup.controls['id'].value;
+    let celular = this.thirdFormGroup.controls['celular'].value;
+    let email = this.thirdFormGroup.controls['email'].value;
     let rol = 3;
     this.servicioRegistro.RegistrarCliente(id, tipoId, nombres, apellidos, celular, email, rol)
     .subscribe((datos: any) => {
-      //this.servicioRegistro.AlmacenarSesion(datos);  
+      //this.servicioRegistro.AlmacenarSesion(datos);
       alert("Se le ha enviado un correo con sus credenciales de acceso. Recuerde validar su email para poder iniciar sesión.")
       this.router.navigate(['/inicio']);
     }, (error: any) =>{
       // KO
-      alert("Datos inválidos")
+      alert(JSON.stringify(error, null, 2))
     });
 
   }
+
 
 }

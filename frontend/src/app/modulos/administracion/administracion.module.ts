@@ -18,7 +18,15 @@ import { CrearInmuebleComponent } from './inmuebles/crear-inmueble/crear-inmuebl
 import { EditarInmuebleComponent } from './inmuebles/editar-inmueble/editar-inmueble.component';
 import { EliminarInmuebleComponent } from './inmuebles/eliminar-inmueble/eliminar-inmueble.component';
 import { BuscarInmuebleComponent } from './inmuebles/buscar-inmueble/buscar-inmueble.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import { matFormFieldAnimations, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+//import { TableComponent } from './inmuebles/buscar-inmueble/table/table.component';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -40,13 +48,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
        CrearInmuebleComponent,
        EditarInmuebleComponent,
        EliminarInmuebleComponent,
-       BuscarInmuebleComponent
+       BuscarInmuebleComponent,
+       //TableComponent,
   ],
   imports: [
     CommonModule,
     AdministracionRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    //Validators,
     //NgbModal,
   ]
 })

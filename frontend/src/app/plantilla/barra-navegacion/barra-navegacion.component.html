@@ -1,25 +1,47 @@
-<nav>
-  <div class="container">
-    <div class="nav-wrapper">
-      <a routerLink="inicio" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-inmuebles">Inmuebles</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/solicitudes/listar-solicitudes">Mis Solicitudes</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
-        <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
-        <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
-        <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<mat-toolbar color="primary">
+  <!--Primera parte donde está la estrella y el nombre-->
+  <mat-toolbar-row>
+    <button mat-icon-button routerLink="inicio" class="example-icon" aria-label="Icon company">
+      <mat-icon>star_half</mat-icon>
+    </button>
+    <span>Hogar Colombia</span>
+    <span class="example-spacer"></span>
+    <!--mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle-->
+    <span class="example-spacer"></span>
+    <label *ngIf="seInicioSesion"><h2><strong>¡Bienvenid@! {{elNombre}}</strong></h2></label>
+  </mat-toolbar-row>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-inmuebles">Inmuebles</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/solicitudes/listar-solicitudes">Mis Solicitudes</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
-    <li *ngIf="!seInicioSesion"><a routerLink="/administracion/clientes/crear-cliente">Registrarse como Cliente</a></li>
-    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
-    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li>
-</ul>
+  <!--Segunda parte donde va el mensaje y los íconos-->
+  <mat-toolbar-row>
+    <span>¡Haz tus sueños realidad!</span>
+    <span class="example-spacer"></span>
+
+    <!--SIN HABER INICIADO SESIÓN-->
+    <!--Iniciar sesión-->
+    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/seguridad/identificar" class="example-icon favorite-icon" aria-label="Iniciar sesión">
+      <mat-icon>group</mat-icon>
+    </button>
+    <!--li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li-->
+    <!--Registrarse como cliente-->
+    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/administracion/clientes/crear-cliente" class="example-icon favorite-icon" aria-label="Registrarse como cliente">
+      <mat-icon>group_add</mat-icon>
+    </button>
+
+    <!--SI YA SE HA INICIADO SESIÓN-->
+    <!--Menú del cliente-->
+    <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="seInicioSesion">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #appMenu="matMenu">
+      <!--ng-template matMenuContent-->
+        <button mat-menu-item routerLink="/administracion/listar-inmuebles">Inmuebles</button>
+        <button mat-menu-item routerLink="/solicitudes/listar-solicitudes">Solicitudes</button>
+      <!--/ng-template-->
+    </mat-menu>
+    
+    <!--Cerrar sesión-->
+    <button mat-icon-button *ngIf="seInicioSesion" routerLink="/seguridad/cerrarSesion" class="example-icon favorite-icon" aria-label="Cerrar sesión">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

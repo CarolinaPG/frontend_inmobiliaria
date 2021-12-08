@@ -26,7 +26,7 @@ export class RecuperarClaveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  RecuperarClave(){
+  recuperarClave(){
     let usuario = this.fgValidador.controls['usuario'].value;
     this.servicioSeguridad.RecuperarClave(usuario)
       .subscribe((datos: any) => {

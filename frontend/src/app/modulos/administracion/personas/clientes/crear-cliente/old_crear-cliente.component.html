@@ -1,0 +1,229 @@
+<app-custom-stepper linear>
+  <cdk-step editable="false" [completed]="completed">
+    <input type="text" name="a" value="Cannot proceed to next step" />
+    <button (click)="completeStep()">Complete step</button>
+  </cdk-step>
+  <cdk-step editable="false">
+    <input type="text" name="b" value="b" />
+  </cdk-step>
+</app-custom-stepper>
+
+
+
+<app-custom-stepper>
+  <cdk-step><p>This is any content of "Step 1"</p></cdk-step>
+  <cdk-step><p>This is any content of "Step 2"</p></cdk-step>
+</app-custom-stepper>
+
+
+
+
+
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstValidador">
+    <form [formGroup]="firstValidador">
+      <ng-template matStepLabel>Escribe tus nombres y apellidos</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Nombres" formControlName="nombres" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Apellidos" formControlName="apellidos" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondValidador">
+    <form [formGroup]="secondValidador">
+      <ng-template matStepLabel>Datos documento ID</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de ID</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let tipo of tiposId" [value]="tipo.value">
+            {{tipo.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>      
+      <mat-form-field>
+        <input matInput placeholder="" formControlName="id" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdValidador">
+    <form [formGroup]="thirdValidador">
+      <ng-template matStepLabel>Celular e Email</ng-template>
+      <mat-form-field class="example-full-width">
+        <span matPrefix>+57 &nbsp;</span>
+        <input formControlName="celular" type="tel" matInput placeholder="Celular">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>      
+      <!--mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <example-tel-input formControlName="tel" required></example-tel-input>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Include area code</mat-hint>
+      </mat-form-field-->
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="email" placeholder="Email" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+
+
+
+
+<div class="row input-field col-sm-6">
+
+  <form [formGroup]="fgValidador" (ngSubmit)="RegistrarCliente()" class="input-field">
+    <div class="imgcontainer">
+      <img src="https://i.imgur.com/dGo8DOk.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="input-field col-sm-12">
+          <i class="material-icons prefix">account_circle</i>
+          <input formControlName="nombres" id="usuario" type="email" class="validate">
+          <label for="nombres">Nombres</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Ingrese sus nombres.</span>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="apellidos" id="usuario" type="email" class="validate">
+          <label for="apellidos">Apellidos</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Ingrese sus apellidos.</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input formControlName="nombres" id="usuario" type="email" class="validate">
+          <label for="nombres">Nombres</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Ingrese sus nombres.</span>
+        </div>
+        <div class="input-field col s12">
+          <!--i class="material-icons prefix">account_circle</i-->
+          <input formControlName="apellidos" id="usuario" type="email" class="validate">
+          <label for="apellidos">Apellidos</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Ingrese sus apellidos.</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="psw">¿Olvidó su <a routerLink="/seguridad/recuperarClave" >contraseña</a>?</span>
+      </div>
+    
+      <div class="row">
+        <div class="input-field col s6 center-align" >
+          <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">LOG IN
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form> 
+</div>
+
+
+<div class="container section">
+<h1 class="center-align" >Registrar Cliente</h1>
+<div class="row">
+  <mat-form-field  [formGroup]="fgValidador" class="col s12" (ngSubmit)="registrarCliente()">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="nombres" id="txtNombres" type="text" class="validate">
+        <label for="txtNombres">Nombres</label>
+      </div>
+      <div class="input-field col s6">
+        <!--i class="material-icons prefix">account_circle</i-->
+        <input formControlName="apellidos" id="txtApellidos" type="text" class="validate">
+        <label for="txtApellidos">Apellidos</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">payment</i>
+        <input formControlName="id" id="txtId" type="tel" class="validate">
+        <label for="txtId">No. de Documento</label>
+      </div>      
+      
+      <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input formControlName="celular" id="txtCelular" type="tel" class="validate">
+        <label for="txtCelular">Celular</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input formControlName="email" id="txtEmail" type="email" class="validate">
+        <label for="txtEmail">Email</label>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label class="required">
+          <input formControlName="recaptcha" id="chkCaptcha" type="checkbox" />
+          <span>Yo no soy un robot</span>
+        </label>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="input-field col s6 center-align" >
+        <button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">REGISTRAR
+          <i class="material-icons right">send</i>
+        </button>
+      </div>      
+    </div>
+</mat-form-field>
+</div>
+        
+</div>
+
+<!--form class="example-container" [formGroup]="options" [style.fontSize.px]="getFontSize()">
+  <mat-form-field appearance="fill" [color]="colorControl.value">
+    <mat-label>Color</mat-label>
+    <mat-select [formControl]="colorControl">
+      <mat-option value="primary">Primary</mat-option>
+      <mat-option value="accent">Accent</mat-option>
+      <mat-option value="warn">Warn</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [color]="colorControl.value">
+    <mat-label>Font size</mat-label>
+    <input matInput type="number" placeholder="Ex. 12" [formControl]="fontSizeControl" min="10">
+    <span matSuffix>px</span>
+    <mat-error *ngIf="fontSizeControl.invalid">Min size: 10px</mat-error>
+  </mat-form-field>
+</form-->
+
+
+

@@ -1,0 +1,59 @@
+<!--form class="example-form">
+<h1 mat-dialog-title class="center-align">Iniciar sesión</h1>
+<div mat-dialog-content>
+    <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()" class="example-form">
+        <div class="row">
+            <mat-form-field class="example-full-width"-->
+                <!--i class="material-icons prefix">contact_mail</i-->
+                <!--input matInput formControlName="usuario" type="text" placeholder="Usuario" value="">
+                <mat-error *ngIf="usuarioFormControl.hasError('email') && !usuarioFormControl.hasError('required')">
+                    Por favor ingrese una dirección de correo electrónico válida.
+                  </mat-error>
+                  <mat-error *ngIf="usuarioFormControl.hasError('required')">
+                    Email es <strong>requerido</strong>
+                  </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="example-full-width"-->
+                <!--i class="material-icons prefix">vpn_key</i-->
+                <!--input matInput formControlName="clave" type="password" placeholder="Contraseña" value="">
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="recuperarClave()">Iniciar sesión</button>
+    <button mat-raised-button (click)="onClickNO()">Cancelar</button>
+    <button mat-raised-button (click)="recuperarClave()">¿Olvidó su contraseña?</button-->
+    <!--button mat-button [mat-dialog-close]="true">Iniciar Sesión</button-->
+<!--/div>
+</form-->
+
+
+<!--div class="row input-field col-sm-6"-->
+
+    <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()" class="input-field">
+    <div class="imgcontainer">
+      <img src="https://res.cloudinary.com/bitcharge/image/upload/v1535940305/panda-avatar.png" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="usuario"><b>Usuario</b></label>
+      <input formControlName="usuario" type="text" placeholder="Ingrese su email" name="usuario">
+  
+      <label for="psw"><b>Contraseña</b></label>
+      <input formControlName="clave" type="password" placeholder="Ingrese su contraseña" name="psw">
+  
+      <button mat-raised-button [disabled]="!fgValidador.valid " class="btn waves-effect waves-light" type="submit" name="action">LOG IN
+        <!--i class="material-icons right">send</i-->
+      </button>
+    
+    </div>
+  
+    <div class="container">
+      <button mat-raised-button type="button" class="cancelbtn" (click)="onClickNO()">Cancelar</button>
+      <span class="psw">Forgot <a routerLink="/seguridad/recuperarClave" (click)="onClickNO()">password?</a></span>
+    </div>
+  </form> 
+  <!--/div-->

@@ -2,6 +2,7 @@
  form {
   /*border: 3px solid #f1f1f1;*/
   border: 3px solid #f1f1f1;
+  background-color: primary;
 }
 
 /* Full-width inputs */
@@ -32,10 +33,10 @@ button:hover {
 }
 
 /* Extra style for the cancel button (red) */
-.btn {
+.cancelbtn {
   width: auto;
-  padding: 5px 18px;
-  background-color:  #04AA6D;
+  padding: 10px 18px;
+  background-color: #f44336;
 }
 
 /* Center the avatar image inside this container */
@@ -71,7 +72,3 @@ span.psw {
     width: 100%;
   }
 } 
-
-.helper-text {
-  color: whitesmoke;
-}

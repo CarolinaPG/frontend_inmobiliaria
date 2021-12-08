@@ -1,10 +1,20 @@
 <title>Hogar Colombia</title>
 
-<!--div class="container"-->
+  <!--mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider-->
+
+
 <link href="../../node_modules/@angular/material/prebuilt-themes/purple-green.css">
-  <app-barra-navegacion></app-barra-navegacion>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-  <app-pie-pagina></app-pie-pagina>
-<!--/div-->
+<app-barra-navegacion></app-barra-navegacion>
+<div class="mat-app-background">
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+</div>
+<app-pie-pagina></app-pie-pagina>

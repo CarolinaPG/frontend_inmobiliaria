@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import * as crypto from "crypto-js";
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
-import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-
 @Component({
-  selector: 'app-identificacion',
-  templateUrl: './identificacion.component.html',
-  styleUrls: ['./identificacion.component.css']
+  selector: 'app-confirm-dialog',
+  templateUrl: './confirm-dialog.component.html',
+  styleUrls: ['./confirm-dialog.component.css']
 })
-export class IdentificacionComponent implements OnInit {
+export class ConfirmDialogComponent implements OnInit {
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
     'clave': ['', [Validators.required]],
   });
+
+  usuarioFormControl = new FormControl('', [
+    Validators.required, Validators.email,
+  ]);
+
+  passFormControl = new FormControl('', [
+    Validators.required,
+  ]);
 
   constructor(
     private fb: FormBuilder,
@@ -25,16 +31,19 @@ export class IdentificacionComponent implements OnInit {
   
     private router: Router,
 
-    public dialog: MatDialog,
+    public dialog: MatDialogModule,
 
-  ) {}
+    public dialogRef: MatDialogRef<ConfirmDialogComponent>,
+
+    @Inject(MAT_DIALOG_DATA) public message:string,
+
+  ) { }
 
   ngOnInit(): void {
-    /**
-     * setInterval(() =>{
-      this.fgValidador.controls["usuario"].setValue(Math.random()*1000)
-    }, 2000)
-    */
+  }
+
+  onClickNO(): void{
+    this.dialogRef.close();
   }
 
   identificarUsuario(){
@@ -46,25 +55,11 @@ export class IdentificacionComponent implements OnInit {
       .subscribe((datos: any) => {
         this.servicioSeguridad.AlmacenarSesion(datos);  
         this.router.navigate(['/inicio']);
-        //alert(JSON.stringify(datos, null, 2));
+        alert(JSON.stringify(datos, null, 2));
       }, (error: any) =>{
         // KO
         alert("Correo no registrado o no verificado. De lo contrario, revise su usuario y contraseña de nuevo")
       });
-  }
-
-  openDialog():void{
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      height: '400px',
-      width: '600px',
-      data: 'Are you sure the deletion of this data?'
-    });
-    dialogRef.afterClosed().subscribe(res => {
-      console.log(res);
-      if(res){
-        console.log('Delete file');
-      }
-    });
   }
 
   recuperarClave(){
@@ -79,5 +74,6 @@ export class IdentificacionComponent implements OnInit {
         alert("Datos inválidos")
       });
   }
+
 
 }
