@@ -1,6 +1,12 @@
+/* Structure */
 table {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
 
 .imagenInmueble{
   width: 100px;
@@ -15,4 +21,9 @@ table {
 .imagenInmueble2{
   width: 400px;
   height: 400px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
 }
