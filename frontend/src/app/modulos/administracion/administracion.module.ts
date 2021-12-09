@@ -27,6 +27,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 //import { TableComponent } from './inmuebles/buscar-inmueble/table/table.component';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -67,6 +69,8 @@ import { MatCardModule } from '@angular/material/card';
     MatStepperModule,
     MatFormFieldModule,
     MatCardModule,
+    MatIconModule,
+    MatDividerModule,
     //Validators,
     //NgbModal,
   ]
