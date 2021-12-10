@@ -21,16 +21,25 @@ export class SolicitudService {
   }
 
   ObtenerRegistros(): Observable<ModeloSolicitud[]>{
-    let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes?filter[include][0][relation]=fechas&filter[include][1][relation]=documentos`);
+    //let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes?filter[include][0][relation]=fechas&filter[include][1][relation]=documentos`);
+    let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes`);
     return datos;
   }
 
-  CrearSolicitud(solicitud: ModeloSolicitud): Observable<ModeloSolicitud>{
-    return this.http.post<ModeloSolicitud>(`${this.url}/solicitudes`, solicitud, {
+  CrearSolicitud(idCliente: string, idInmueble: string, fechas: string[]): Observable<ModeloSolicitud>{
+    let sol = {
+      id_cliente: idCliente,
+      id_inmueble: idInmueble,
+      fechas: fechas
+    };
+    alert(JSON.stringify(sol));
+    let res = this.http.post<ModeloSolicitud>(`${this.url}/solicitudes`, sol, {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
+        //'Authorization': `Bearer ${this.token}`
       })
-    })
+    });
+    alert(JSON.stringify(res));
+    return res;
   }
 
   ActualizarSolicitud(solicitud: ModeloSolicitud): Observable<ModeloSolicitud>{

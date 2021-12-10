@@ -19,6 +19,8 @@ Comandos de los paquetes que se requisiró instalar
 
 > npm install --save @ng-bootstrap/ng-bootstrap@"*" --legacy-peer-deps
 
+> npm i @angular/material-moment-adapter
+
 > ng add @angular/material
 
 

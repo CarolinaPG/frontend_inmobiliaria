@@ -29,6 +29,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ConfirmDialogComponent } from './inmuebles/buscar-inmueble/confirm-dialog/confirm-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
 //import { TableComponent } from './inmuebles/buscar-inmueble/table/table.component';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -52,6 +58,7 @@ import { MatDividerModule } from '@angular/material/divider';
        EditarInmuebleComponent,
        EliminarInmuebleComponent,
        BuscarInmuebleComponent,
+       ConfirmDialogComponent,
        //TableComponent,
   ],
   imports: [
@@ -71,6 +78,11 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatIconModule,
     MatDividerModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatNativeDateModule,
     //Validators,
     //NgbModal,
   ]

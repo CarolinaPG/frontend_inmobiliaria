@@ -5,6 +5,9 @@
       <mat-icon>star_half</mat-icon>
     </button>
     <span>Hogar Colombia</span>
+    <button mat-icon-button routerLink="inicio" class="example-icon" aria-label="Icon company">
+      <mat-icon>home</mat-icon>
+    </button>
     <span class="example-spacer"></span>
     <!--mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle-->
     <span class="example-spacer"></span>
@@ -18,29 +21,29 @@
 
     <!--SIN HABER INICIADO SESIÓN-->
     <!--Iniciar sesión-->
-    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/seguridad/identificar" class="example-icon favorite-icon" aria-label="Iniciar sesión">
+    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/seguridad/identificar" class="example-icon favorite-icon" matTooltip="Iniciar sesión" aria-label="Iniciar sesión">
       <mat-icon>group</mat-icon>
     </button>
     <!--li *ngIf="!seInicioSesion"><a routerLink="/seguridad/recuperarClave">Recuperar Clave</a></li-->
     <!--Registrarse como cliente-->
-    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/administracion/clientes/crear-cliente" class="example-icon favorite-icon" aria-label="Registrarse como cliente">
+    <button mat-icon-button *ngIf="!seInicioSesion" routerLink="/administracion/clientes/crear-cliente" class="example-icon favorite-icon" matTooltip="Registrarse como cliente" aria-label="Registrarse como cliente">
       <mat-icon>group_add</mat-icon>
     </button>
 
     <!--SI YA SE HA INICIADO SESIÓN-->
     <!--Menú del cliente-->
-    <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="seInicioSesion">
+    <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="seInicioSesion" matTooltip="Menú del cliente">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #appMenu="matMenu">
       <!--ng-template matMenuContent-->
-        <button mat-menu-item routerLink="/administracion/listar-inmuebles">Inmuebles</button>
-        <button mat-menu-item routerLink="/solicitudes/listar-solicitudes">Solicitudes</button>
+        <button mat-menu-item routerLink="/administracion/listar-inmuebles" matTooltip="Ver todos los inmuebles">Inmuebles</button>
+        <button mat-menu-item routerLink="/solicitudes/listar-solicitudes" matTooltip="Ver mis solicitudes">Solicitudes</button>
       <!--/ng-template-->
     </mat-menu>
     
     <!--Cerrar sesión-->
-    <button mat-icon-button *ngIf="seInicioSesion" routerLink="/seguridad/cerrarSesion" class="example-icon favorite-icon" aria-label="Cerrar sesión">
+    <button mat-icon-button *ngIf="seInicioSesion" routerLink="/seguridad/cerrarSesion" class="example-icon favorite-icon" matTooltip="Cerrar sesión" aria-label="Cerrar sesión">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar-row>

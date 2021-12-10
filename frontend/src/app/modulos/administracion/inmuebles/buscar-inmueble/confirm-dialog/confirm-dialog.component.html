@@ -1,0 +1,91 @@
+<h1 mat-dialog-title class="center-align">SOLICITUD DEL INMUEBLE</h1>
+<mat-dialog-content>
+  <div class="row">
+    <!--Card del cliente-->
+    <div class="col-md-6">
+      <h3 mat-title><strong>Datos del cliente:</strong></h3>
+      <mat-card class="example-card">
+          <mat-card-title-group >
+            <mat-card-title>{{data.nombreC}}</mat-card-title>
+            <mat-card-subtitle>{{data.correoC}}<br>{{data.idC}}</mat-card-subtitle>
+          </mat-card-title-group >
+          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src="https://res.cloudinary.com/bitcharge/image/upload/v1535940305/panda-avatar.png" ></div>&nbsp;
+          <mat-card-content>
+            &nbsp;
+            <div>
+            El cliente {{data.nombreC}}, identificado con número de documento {{data.idC}}, solicita el {{data.tipoIn}} con código {{data.codigoI}} para {{data.tipoOf}} 
+            por un valor de <strong>${{data.valorI}}.00</strong>. 
+            </div>
+            &nbsp;
+          </mat-card-content>
+      </mat-card>
+      &nbsp;
+    </div>
+
+    <!--Card del inmueble-->
+    <div class="col-md-6">
+      <h3 mat-title><strong>Datos de Inmueble:</strong></h3>
+      <mat-card class="example-card">
+          <mat-card-title-group >
+            <mat-card-title>{{data.codigoI}}</mat-card-title>
+            <mat-card-subtitle>{{data.tipoIn}}<br>{{data.tipoOf}}</mat-card-subtitle>
+          </mat-card-title-group >
+            <!--&nbsp;-->
+          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src={{data.fotoI}} ></div>&nbsp;
+          <mat-card-content>
+            &nbsp;
+            <div>
+            El inmueble está ubicado en la dirección <strong>{{data.dirI}}</strong>, en la ciudad de {{data.ciudadI}} ({{data.depaI}}). 
+            Se oferta para {{data.tipoOf}} por un valor de <strong>${{data.valorI}}.00</strong>.
+            </div>
+            &nbsp;
+          </mat-card-content>
+      </mat-card>
+      &nbsp;
+    </div>
+
+  <h3 mat-title><strong>Fechas de la solicitud:</strong></h3>
+
+    <ol>
+      <li>Fecha inicial: Fecha de hoy, que es cuando se registra la solicitud. </li>
+      <li>Fecha final: Para compra es la fecha en la que se celebrará la compta, mientras que para alquiler se refiere al tiempo de permanencia en el inmueble.</li>
+    </ol>
+
+    <div class="row" >
+      <form [formGroup]="myGroup" (ngSubmit)="solicitar()">
+        <div class="col s6">
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha Inicial</mat-label>
+            <input matInput [matDatepicker]="dp1" formControlName="start" [min]="minDate" [max]="minDate"> <!--[(ngModel)]="data.fechaI"-->
+            <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+            <mat-datepicker #dp1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col s6">
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha final</mat-label>
+            <input matInput [matDatepicker]="dp2" formControlName='end' [min]="minDate" [max]="maxDate"> <!--[(ngModel)]="data.fechaF"-->
+            <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+            <mat-datepicker #dp2 color="primary"></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+</div>
+<p>
+  {{myGroup.controls['start'].value}}
+</p>
+<p>
+  {{myGroup.controls['end'].value}}
+</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="row">
+    <div class="col s6">
+      <button mat-button mat-dialog-close class="noBtn">CANCELAR</button>
+    </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <div class="col s6">
+      <button mat-button [mat-dialog-close]="myGroup.controls['end'].value == null ? [myGroup.controls['start'].value] : [myGroup.controls['start'].value, myGroup.controls['end'].value]" type="submit" class="yesBtn" name="action">SOLICITAR</button>
+    </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  </div>
+</mat-dialog-actions>

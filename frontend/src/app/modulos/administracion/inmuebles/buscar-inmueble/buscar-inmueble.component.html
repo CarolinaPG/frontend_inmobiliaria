@@ -1,4 +1,19 @@
-    <mat-form-field appearance="standard">
+&nbsp;
+<div class="example-button-row">
+  <button mat-fab color="primary">Primary</button>
+  <button mat-fab color="accent">Accent</button>
+  <button mat-fab color="warn">Warn</button>
+  <button mat-fab disabled>Disabled</button>
+  <button mat-fab aria-label="Example icon-button with a heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <a mat-fab routerLink=".">Link</a>
+</div>
+
+<button mat-fab color="primary" id="add-button" matTooltip="Add customer">
+  <i class="material-icons" >group_add</i></button>
+
+<mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input (keyup)="applyFilter($any($event.target).value)" matInput  placeholder="Filtro" #input>
     </mat-form-field>
@@ -74,33 +89,38 @@
         </tr>      
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of listadoRegistros"></mat-paginator>
+    <mat-paginator [length]="length" [pageSize]='pageSize' [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event" aria-label="Select page of listadoRegistros"></mat-paginator>
 
   </div>
   &nbsp;
         
 
-  <div class="row">
+<div class="row">
   <div class="col-md-4" *ngFor="let element of listadoRegistros">
     <mat-card class="example-card">
         &nbsp;
         <mat-card-title-group >
-            <mat-card-title>{{element.codigo}}</mat-card-title>
-            <mat-card-subtitle>{{element.tipoO?.nombre}} <br> {{element.tipoIn?.nombre}}</mat-card-subtitle>
-            <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src={{element.fotografia}} ></div>&nbsp;
+          <div>
+          <mat-card-title>{{element.codigo}}</mat-card-title>
+          <mat-card-subtitle>{{element.tipoO?.nombre}} - {{element.tipoIn?.nombre}}</mat-card-subtitle>
+        </div>
+        <button mat-fab (click)="solicitarInmueble(element)" matTooltip="Solicitar inmueble" aria-label="Example icon-button with a heart icon">
+            <mat-icon>add</mat-icon></button>
         </mat-card-title-group>
+        <!--&nbsp;-->
+        <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src={{element.fotografia}} ></div>&nbsp;
         <mat-card-content>
-        &nbsp;
-        <div class="justify">
-          Este hermoso inmuele es un(a) {{element.tipoIn?.nombre}} ubicado en la dirección 
+          &nbsp;
+          <div>
+          Este hermoso inmueble es un(a) {{element.tipoIn?.nombre}} ubicado en la dirección 
           {{element.direccion}} en la ciudad de {{element.ciudad?.nombre}} en el departamento 
           de {{element.departamento}}. Se encuentra disponible para una oferta de 
           {{element.tipoO?.nombre}} por un valor de <strong>${{element.valor}}.00</strong>.
           ¡No dejes pasar la oportunidad!
           </div>
+          &nbsp;
         </mat-card-content>
     </mat-card>
     &nbsp;
   </div>
 </div>
-

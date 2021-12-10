@@ -41,6 +41,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 //import { BuscarInmueblesComponent } from './modulos/adminsitracion/inmuebles/buscar-inmuebles/buscar-inmuebles.component';
 
 @NgModule({
@@ -88,6 +91,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatToolbarModule,
     MatTreeModule,
     MatIconModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
