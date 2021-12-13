@@ -29,7 +29,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 //import { TableComponent } from './modules/table/table.component';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 //import { DashboardComponent } from './modules/dashboard/dashboard.component';
@@ -88,12 +88,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     DragDropModule,
     MatDialogModule,
     MatStepperModule,
-    MatToolbarModule,
-    MatTreeModule,
-    MatIconModule,
     MatTooltipModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    //MatTableDataSource,
   ],
   providers: [],
   bootstrap: [AppComponent]

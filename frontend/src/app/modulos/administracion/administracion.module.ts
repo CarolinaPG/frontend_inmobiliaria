@@ -35,6 +35,8 @@ import { ConfirmDialogComponent } from './inmuebles/buscar-inmueble/confirm-dial
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FiltroPipe } from './inmuebles/buscar-inmueble/filtro.pipe';
+//import { FiltroPipe } from './inmuebles/buscar-inmueble/filtro.pipe';
 //import { TableComponent } from './inmuebles/buscar-inmueble/table/table.component';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -59,6 +61,8 @@ import { MatNativeDateModule } from '@angular/material/core';
        EliminarInmuebleComponent,
        BuscarInmuebleComponent,
        ConfirmDialogComponent,
+       FiltroPipe,
+       //FiltroPipe,
        //TableComponent,
   ],
   imports: [

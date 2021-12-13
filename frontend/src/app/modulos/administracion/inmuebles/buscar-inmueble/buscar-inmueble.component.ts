@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 //import { Router } from '@angular/router';
 //import { ModeloDepartamento } from 'src/app/modelos/departamento.modelo';
 import { ModeloInmueble } from 'src/app/modelos/inmueble.modelo';
@@ -19,7 +19,6 @@ import { MatDatepicker } from '@angular/material/datepicker';
 import { ModeloSolicitud } from 'src/app/modelos/solicitud.modelo';
 import { SolicitudService } from 'src/app/servicios/solicitud.service';
 
-
 @Component({
   selector: 'app-buscar-inmueble',
   templateUrl: './buscar-inmueble.component.html',
@@ -27,16 +26,18 @@ import { SolicitudService } from 'src/app/servicios/solicitud.service';
 })
 export class BuscarInmuebleComponent implements OnInit {
   length: number = 0;
-  pageSize: number = 10;
+  pageSize: number = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   pageEvent!: PageEvent;
 
   listadoRegistros: ModeloInmueble[] = [];
   listadoRegistrosLibres: ModeloInmueble[] = [];
+  registroInterface: InmuebleInterface[] = [];
 
-  displayedColumns: string[] = ['posicion', 'codigo', 'lugar', 'direccion', 'valor', 'tipo', 'oferta', 'fotografia', 'estado'];
-  dataSource: MatTableDataSource<ModeloInmueble>;
+  displayedColumns: string[] = ['posicion', 'codigo', 'tipoIn', 'tipoOf', 'ciudad', 'departamento', 'direccion', 'valor', 'foto', 'estado'];
+  dataSource = new MatTableDataSource<InmuebleInterface>(this.registroInterface);
+  //dataSource = new MatTableDataSource<ModeloInmueble>(this.listadoRegistros);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -56,7 +57,7 @@ export class BuscarInmuebleComponent implements OnInit {
     public dialog: MatDialog,
 
   ) { 
-    this.dataSource = new MatTableDataSource(this.listadoRegistros);
+    //this.dataSource = new MatTableDataSource(this.registroInterface);
     this.ngAfterViewInit();
   }
 
@@ -71,8 +72,23 @@ export class BuscarInmuebleComponent implements OnInit {
         if(element.estado?.id == 6)
           this.listadoRegistrosLibres.push(element);
       });
-      this.dataSource = new MatTableDataSource(this.listadoRegistros);
-      this.length = this.listadoRegistros.length;
+      datos.forEach(element => {
+        let interfaceIn: InmuebleInterface = {
+          posicion:     this.listadoRegistros.indexOf(element) +1,
+          codigo:       element.codigo!,
+          tipoIn:       element.tipoIn?.nombre!,
+          tipoOf:       element.tipoO?.nombre!,
+          direccion:    element.direccion!,
+          ciudad:       element.ciudad?.nombre!,
+          depa:         element.departamento!,
+          valor:        element.valor!,
+          foto:         element.fotografia!,
+          estado:       element.estado?.nombre!
+        };
+        this.registroInterface.push(interfaceIn);
+      });
+      this.dataSource = new MatTableDataSource<InmuebleInterface>(this.registroInterface);
+      this.length = this.registroInterface.length;
     }, (error: any) => {
       alert("error listando los inmuebles");
     })
@@ -84,23 +100,20 @@ export class BuscarInmuebleComponent implements OnInit {
         let nombreC = datos.datos?.nombres + " " + datos.datos?.apellidos;
         let correoC = datos.datos?.correo;
         let idC = datos.datos?.id;
-        let idI = predio.id;
-        let codigoI = predio.codigo;
-        let tipoIn = predio.tipoIn?.nombre;
-        let tipoOf = predio.tipoO?.nombre;
-        let tipoOfId = predio.tipoO?.id;
-        let dirI = predio.direccion;
-        let ciudadI = predio.ciudad?.nombre;
-        let depaI = predio.departamento;
-        let valorI = predio.valor;
-        let fotoI = predio.fotografia;
+        //let tipoIn = predio.tipoIn?.nombre;
+        //let dirI = predio.direccion;
+        //let ciudadI = predio.ciudad?.nombre;
+        //let depaI = predio.departamento;
+        //let valorI = predio.valor;
+        //let fotoI = predio.fotografia;
+        
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
           height: '800px',
           width: '750px',
-          data: {nombreC, correoC, idC, codigoI, tipoIn, tipoOf, tipoOfId, dirI, ciudadI, depaI, valorI, fotoI }
+          data: {nombreC, correoC, idC, predio }
         });
         dialogRef.afterClosed().subscribe(res => {
-          this.solicitudServicio.CrearSolicitud(idC!, idI!, res)
+          this.solicitudServicio.CrearSolicitud(idC!, predio.id!, res)
           .subscribe((datos: any) => {
             alert("Se registró la solicitud exitosamente");
             //this.router.navigate(['/inicio']);
@@ -130,16 +143,25 @@ export class BuscarInmuebleComponent implements OnInit {
       console.log("Tenemos paginator en datasource");
     }
     */
-   this.dataSource.filter = filterValue.trim().toLowerCase();
+    //this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.toLowerCase();
   }
 
-  /*
-  openModal(template: TemplateRef<any>){
-    this.bsModalRef = this.modalService.show(template);
-  }
-  */
 }
 
-const COLORS: string[] = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
+//const COLORS: string[] = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
+//  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
 
+// Generated by https://quicktype.io
+export interface InmuebleInterface {
+  posicion:     number;
+  codigo:       string;
+  tipoIn:       string;
+  tipoOf:       string;
+  direccion:    string;
+  ciudad:       string;
+  depa:         string;
+  valor:        number;
+  foto:         string;
+  estado:       string;
+}

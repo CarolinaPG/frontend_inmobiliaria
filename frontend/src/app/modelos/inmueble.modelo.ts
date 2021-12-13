@@ -14,7 +14,7 @@ export class ModeloInmueble{
     videoYoutube?: string;
     asesor?: ModeloPersona;
     ciudad?: ModeloCiudad;
-    departamento?: ModeloDepartamento;
+    departamento?: string;
     estado?: ModeloEstado;
     tipoIn?: ModeloTipoInmueble;
     tipoO?: ModeloTipoOferta;

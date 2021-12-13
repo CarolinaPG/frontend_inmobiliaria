@@ -53,11 +53,11 @@ export class ConfirmDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  
   solicitar(){
-    let fechaI = this.myGroup.controls['start'].value;
-    let fechaF = this.myGroup.controls['end'].value;
-    alert(fechaI);
-    console.log(true);
     alert("Entrado a solicitar()");
   }
 

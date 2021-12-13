@@ -9,11 +9,11 @@
             <mat-card-title>{{data.nombreC}}</mat-card-title>
             <mat-card-subtitle>{{data.correoC}}<br>{{data.idC}}</mat-card-subtitle>
           </mat-card-title-group >
-          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src="https://res.cloudinary.com/bitcharge/image/upload/v1535940305/panda-avatar.png" ></div>&nbsp;
+          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src="https://res.cloudinary.com/bitcharge/image/upload/v1535940305/panda-avatar.png" alt={{data.predio.codigo}}></div>&nbsp;
           <mat-card-content>
             &nbsp;
             <div>
-            El cliente {{data.nombreC}}, identificado con número de documento {{data.idC}}, solicita el {{data.tipoIn}} con código {{data.codigoI}} para {{data.tipoOf}} 
+            El cliente {{data.nombreC}}, identificado con número de documento {{data.idC}}, solicita el {{data.predio.tipoIn?.nombre}} con código {{data.predio.codigo}} para {{data.tipoOf}} 
             por un valor de <strong>${{data.valorI}}.00</strong>. 
             </div>
             &nbsp;
@@ -27,16 +27,16 @@
       <h3 mat-title><strong>Datos de Inmueble:</strong></h3>
       <mat-card class="example-card">
           <mat-card-title-group >
-            <mat-card-title>{{data.codigoI}}</mat-card-title>
-            <mat-card-subtitle>{{data.tipoIn}}<br>{{data.tipoOf}}</mat-card-subtitle>
+            <mat-card-title>{{data.predio.codigo}}</mat-card-title>
+            <mat-card-subtitle>{{data.predio.tipoIn?.nombre}}<br>{{data.predio.tipoO?.nombre}}</mat-card-subtitle>
           </mat-card-title-group >
             <!--&nbsp;-->
-          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src={{data.fotoI}} ></div>&nbsp;
+          <div class="center-align"><img mat-card-xl-image class="imagenInmueble1" src={{data.predio.fotografia}} alt={{data.predio.codigo}}></div>&nbsp;
           <mat-card-content>
             &nbsp;
             <div>
-            El inmueble está ubicado en la dirección <strong>{{data.dirI}}</strong>, en la ciudad de {{data.ciudadI}} ({{data.depaI}}). 
-            Se oferta para {{data.tipoOf}} por un valor de <strong>${{data.valorI}}.00</strong>.
+            El inmueble está ubicado en la dirección <strong>{{data.predio.direccion}}</strong>, en la ciudad de {{data.predio.ciudad?.nombre}} ({{data.predio.departamento}}). 
+            Se oferta para {{data.predio.tipoO?.nombre}} por un valor de <strong>${{data.predio.valor}}.00</strong>.
             </div>
             &nbsp;
           </mat-card-content>
@@ -52,7 +52,7 @@
     </ol>
 
     <div class="row" >
-      <form [formGroup]="myGroup" (ngSubmit)="solicitar()">
+      <form [formGroup]="myGroup" >
         <div class="col s6">
           <mat-form-field appearance="fill">
             <mat-label>Fecha Inicial</mat-label>
@@ -72,20 +72,15 @@
       </form>
     </div>
 </div>
-<p>
-  {{myGroup.controls['start'].value}}
-</p>
-<p>
-  {{myGroup.controls['end'].value}}
-</p>
+
 </mat-dialog-content>
 <mat-dialog-actions>
   <div class="row">
     <div class="col s6">
-      <button mat-button mat-dialog-close class="noBtn">CANCELAR</button>
+      <button mat-button mat-dialog-close (click)="onNoClick()" class="noBtn">CANCELAR</button>
     </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
     <div class="col s6">
-      <button mat-button [mat-dialog-close]="myGroup.controls['end'].value == null ? [myGroup.controls['start'].value] : [myGroup.controls['start'].value, myGroup.controls['end'].value]" type="submit" class="yesBtn" name="action">SOLICITAR</button>
+      <button mat-button [mat-dialog-close]="myGroup.controls['end'].value == null ? [myGroup.controls['start'].value] : [myGroup.controls['start'].value, myGroup.controls['end'].value]" class="yesBtn" cdkFocusInitial>SOLICITAR</button>
     </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
   </div>
 </mat-dialog-actions>

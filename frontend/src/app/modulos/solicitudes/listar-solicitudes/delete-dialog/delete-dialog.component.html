@@ -1,0 +1,14 @@
+<h1 mat-dialog-title class="center-align">ELIMINAR SOLICITUD</h1>
+<mat-dialog-content>
+<p>¿Está seguro de querer eliminar la solicitud?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="row">
+    <div class="col s6">
+      <button mat-button mat-dialog-close (click)="onNoClick()" class="noBtn">NO</button>
+    </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <div class="col s6">
+      <button mat-button [mat-dialog-close]="true" class="yesBtn" cdkFocusInitial>SI</button>
+    </div><!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  </div>
+</mat-dialog-actions>

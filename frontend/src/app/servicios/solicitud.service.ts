@@ -20,10 +20,20 @@ export class SolicitudService {
     this.token = this.seguridadServicio.ObtenerToken();
   }
 
-  ObtenerRegistros(): Observable<ModeloSolicitud[]>{
+  //ObtenerRegistros(): Observable<ModeloSolicitud[]>{
     //let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes?filter[include][0][relation]=fechas&filter[include][1][relation]=documentos`);
-    let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes`);
-    return datos;
+  //  let datos = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes`);
+  //  return datos;
+  //}
+
+  ObtenerRegistrosCliente(idCliente: string) {
+    //let res = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes/cliente/${idCliente}`, {
+    let res = this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes?filter[include][0][relation]=fechas&filter[include][1][relation]=documentos&filter[include][2][relation]=estado&filter[include][3][relation]=cliente&filter[include][4][relation]=predio&filter[where][id_cliente]=${idCliente}`, {
+        headers: new HttpHeaders({
+        //'Authorization': `Bearer ${this.token}`
+      })
+    });
+    return res;
   }
 
   CrearSolicitud(idCliente: string, idInmueble: string, fechas: string[]): Observable<ModeloSolicitud>{
@@ -32,13 +42,11 @@ export class SolicitudService {
       id_inmueble: idInmueble,
       fechas: fechas
     };
-    alert(JSON.stringify(sol));
     let res = this.http.post<ModeloSolicitud>(`${this.url}/solicitudes`, sol, {
       headers: new HttpHeaders({
         //'Authorization': `Bearer ${this.token}`
       })
     });
-    alert(JSON.stringify(res));
     return res;
   }
 
@@ -51,11 +59,12 @@ export class SolicitudService {
   }
 
   EliminarSolicitud(id: string): Observable<any>{
+    alert(id);
     return this.http.delete(`${this.url}/solicitudes/${id}`, {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
+        //'Authorization': `Bearer ${this.token}`
       })
-    })
+    });
   }
 
 }
